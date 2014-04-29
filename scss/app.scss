@@ -1,0 +1,129 @@
+@import "compass/reset";
+
+$main-black : #222;
+body{
+        font-family: HelveticaNeue, Arial, Helvetica, sans-serif;
+}
+
+#head{
+        .go-back{
+                background: inline-image("go-back.png") no-repeat center center;
+                width: 90px;
+                float: left;
+        }
+        .search{
+                background: inline-image("search.png") no-repeat center center;
+                width: 80px;
+                float: right;
+        }
+        .options{
+                background: inline-image("options.png") no-repeat left center;
+                width: 85px;
+                float: right;
+        }
+        a{
+                height: 88px;
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+        }
+        h3{
+                text-align: center;
+                font-size: 36px;
+                color: #fff;
+                position: absolute;
+                width: 100%;
+                overflow: hidden;
+                height: 88px;
+                line-height: 88px;
+
+                &.logo{
+                        background: inline-image("logo.png") no-repeat center center;
+                        text-indent: -9999px;
+                }
+        }
+
+        border-bottom: 2px solid #303030;
+        background: $main-black;
+        overflow: auto;
+}
+
+
+#main{
+        padding: 20px 0 0 0;
+        background: $main-black;
+        overflow: auto;
+        width: 100%;
+
+        .category-1{
+                position: relative;
+                
+                img{
+                        width: 600px;
+                }
+
+                h3{
+                        font-size: 36px;
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        color: #fff;
+                }
+
+                figcaption{
+                        position: absolute;
+                        padding: 15px 15px 10px 15px;
+                        bottom: 0px;
+                        font-size: 32px;
+                        line-height: 40px;
+                        color: #fff;
+                        background-color: rgba(0,0,0,0.3);
+                        box-sizing: border-box;
+
+                }
+                margin-bottom: 20px;
+        }
+
+
+        .category-2,.category-3{
+                position: relative;
+                
+                img{
+                         width: 300px;
+                }
+
+                h3{
+                        font-size: 32px;
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        color: #fff;
+                }
+
+                margin-bottom: 20px;
+        }
+        
+        
+        .category-4{
+                position: relative;
+                img{
+                        width:  600px
+                }
+
+                h3{
+                        font-size: 32px;
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        color: #fff;
+                }
+
+                margin-bottom: 20px;
+        }
+
+        .category-1,.category-2,.category-3,.category-4{
+                margin-left: 20px;
+                float: left;
+        }
+
+}
