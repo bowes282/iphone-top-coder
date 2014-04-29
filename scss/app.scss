@@ -16,10 +16,14 @@ body{
                 width: 80px;
                 float: right;
         }
-        .options{
-                background: inline-image("options.png") no-repeat left center;
+        .menu{
+                background: inline-image("menu.png") no-repeat left center;
                 width: 85px;
                 float: right;
+                
+                &:active{
+                         background: inline-image("menu-active.png") no-repeat left center;
+                }
         }
         a{
                 height: 88px;
@@ -125,5 +129,4 @@ body{
                 margin-left: 20px;
                 float: left;
         }
-
 }
