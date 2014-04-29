@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*
+这个只是用来测试sass和compass能否使用
+*/
+/* line 9, ../scss/test.scss */
+.aa {
+  color: red;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background: url('../img/add.png');
+}
