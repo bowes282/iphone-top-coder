@@ -1,11 +1,16 @@
 
-nav{
-/*    position: fixed;*/
-    position: absolute;
+.nav{
+    position: fixed;
+    top: 0px;
     right: 0px;
     padding: 10px 0;
     background: #333;
     width: 430px;
+    z-index: 10;
+    margin-right: -430px;
+    overflow: hidden;
+    height: 1136px;
+    
     
     .nav-head{
         img{
@@ -34,11 +39,6 @@ nav{
     }
     
     .nav-list{
-                
-        @mixin hover-blueback{
-            
-        }
-        
         li{
             padding: 0 20px;
             &:active, &:hover{

@@ -5,7 +5,7 @@ body{
         font-family: HelveticaNeue, Arial, Helvetica, sans-serif;
 }
 
-#head{
+.head{
         .go-back{
                 background: inline-image("go-back.png") no-repeat center center;
                 width: 90px;
@@ -52,14 +52,22 @@ body{
         overflow: auto;
 }
 
+main{
+         transition: 0.4s all;
+        &.navon{
+                -webkit-transform: translateX(-430px);
+                -transform: translateX(-430px);
+        }
+}
 
-#main{
+
+.default{
         padding: 20px 0 0 0;
         background: $main-black;
         overflow: auto;
         width: 100%;
 
-        .category-1{
+        .category-a{
                 position: relative;
                 
                 img{
@@ -89,11 +97,11 @@ body{
         }
 
 
-        .category-2,.category-3{
+        .category-b,.category-c{
                 position: relative;
                 
                 img{
-                         width: 300px;
+                         width: 290px;
                 }
 
                 h3{
@@ -108,7 +116,7 @@ body{
         }
         
         
-        .category-4{
+        .category-d{
                 position: relative;
                 img{
                         width:  600px
@@ -125,8 +133,9 @@ body{
                 margin-bottom: 20px;
         }
 
-        .category-1,.category-2,.category-3,.category-4{
+        .category-a,.category-b,.category-c,.category-d{
                 margin-left: 20px;
                 float: left;
         }
+        
 }
