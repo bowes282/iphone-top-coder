@@ -8,6 +8,7 @@
 }
 
 //angular 全屏侧滑效果
+// $direction is enter position
 @mixin angular-animate($direciton){
     &.ng-enter{
         z-index: 2;
@@ -27,22 +28,20 @@
     }
 }
 
-.slide-left-animate{
-    //position : absolute;
+.slide-from-left{
+    position : absolute;
     width: 100%;
-    height: 100%;
-    background: #fff;
-   // overflow: hidden;
+    //height: 100%;
+    overflow: hidden;
 @include angular-animate(-100%);
 }
 
 
-.slide-right-animate{
-    //position : absolute;
+.slide-from-right{
+    position : absolute;
     width: 100%;
-    height: 100%;
-    background: #fff;
-   // overflow: hidden;
+    //height: 100%;
+    overflow: hidden;
  @include angular-animate(100%);
 }
 

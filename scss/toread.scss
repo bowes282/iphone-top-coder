@@ -1,0 +1,26 @@
+@import "compass";
+
+.toread{
+        margin-top: 2px;
+         @include clearfix;
+        figure{
+                position: relative;
+                float: left;
+                margin-left: 20px;
+                margin-top: 20px;
+                
+                img{
+                        width: 600px;
+                        height: 310px;
+                }
+                
+                figcaption{
+                        position: absolute;
+                        font-size: 36px;
+                        color: #fff;
+                        top: 15px;
+                        left: 15px;
+                }
+        }
+        
+}

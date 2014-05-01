@@ -112,6 +112,10 @@ main.navon {
   -transform: translateX(-430px);
 }
 
+.black {
+  background: #222222;
+}
+
 .default {
   padding: 20px 0 0 0;
   background: #222222;

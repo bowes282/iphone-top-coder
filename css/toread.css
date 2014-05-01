@@ -1,0 +1,22 @@
+.toread {
+  margin-top: 2px;
+  overflow: hidden;
+  *zoom: 1;
+}
+.toread figure {
+  position: relative;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.toread figure img {
+  width: 600px;
+  height: 310px;
+}
+.toread figure figcaption {
+  position: absolute;
+  font-size: 36px;
+  color: #fff;
+  top: 15px;
+  left: 15px;
+}

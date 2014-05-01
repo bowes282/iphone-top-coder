@@ -1,9 +1,9 @@
-.slide-left-animate {
+.slide-from-left {
+  position: absolute;
   width: 100%;
-  height: 100%;
-  background: #fff;
+  overflow: hidden;
 }
-.slide-left-animate.ng-enter {
+.slide-from-left.ng-enter {
   z-index: 2;
   -webkit-transform: translateX(-100%);
   -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
@@ -11,24 +11,24 @@
   -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
 }
-.slide-left-animate.ng-enter.ng-enter-active {
+.slide-from-left.ng-enter.ng-enter-active {
   position: absolute;
   z-index: 1;
   -webkit-transform: translateX(0);
 }
-.slide-left-animate.ng-leave {
+.slide-from-left.ng-leave {
   -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
 }
 
-.slide-right-animate {
+.slide-from-right {
+  position: absolute;
   width: 100%;
-  height: 100%;
-  background: #fff;
+  overflow: hidden;
 }
-.slide-right-animate.ng-enter {
+.slide-from-right.ng-enter {
   z-index: 2;
   -webkit-transform: translateX(100%);
   -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
@@ -36,12 +36,12 @@
   -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
 }
-.slide-right-animate.ng-enter.ng-enter-active {
+.slide-from-right.ng-enter.ng-enter-active {
   position: absolute;
   z-index: 1;
   -webkit-transform: translateX(0);
 }
-.slide-right-animate.ng-leave {
+.slide-from-right.ng-leave {
   -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;

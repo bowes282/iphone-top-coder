@@ -1,0 +1,23 @@
+<div class="toread" ng-controller="toReadController as toreads">
+<!--        <figure>
+                <img src="img/toread-1.png" alt="" title="">
+                <figcaption>Aenean nec sapien massa</figcaption>
+        </figure>
+
+        <figure>
+                <img src="img/toread-2.png" alt="" title="">
+                <figcaption>Praesent consectetur justo a diam iaculis nec</figcaption>
+        </figure>
+
+        <figure>
+                <img src="img/toread-3.png" alt="" title="">
+                <figcaption>Aenean nec sapien massa</figcaption>
+        </figure>-->
+        
+        <figure ng-repeat="toread in toreads" >
+                <img ng-src="{{toread.src}}" alt="{{toread.alt}}" title="{{toread.title}}">
+                <figcaption>{{toread.caption}}</figcaption>
+        </figure>
+        
+</div>
+

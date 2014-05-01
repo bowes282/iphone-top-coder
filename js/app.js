@@ -5,36 +5,71 @@ app.config(function($routeProvider) {
         $routeProvider
                 .when('/Dashboard/Default',
                         {
-                                controller: 'bodyController',
+                                //controller: 'bodyController',
                                 templateUrl: 'partials/default.html',
-                                right: true,
+                                direction: 'right',
                                 title: 'logo'
+                        })
+                .when('/Dashboard/ToRead',
+                        {
+                                controller: 'toReadController',
+                                templateUrl: 'partials/toRead.html',
+                                direction: 'left',
+                                title: 'To Read'
                         })
                 .otherwise(
                         {
                                 redirectTo: '/Dashboard/Default',
-                                right: true,
-                                title: 'logo'
+                                //direction: 'right',
+                                //title: 'logo'
                         }
 
                 );
-
 });
 
 
-app.controller('bodyController', function($scope ,$route){
-    var slideDirection = 'slide-left-animate'; //一般留空
+app.service('dataService',function($http){
+        
+
+        this.getToReadData = function() {
+                return $http.get('data/toread.json', {
+                        'cache': true
+                });
+        };
+        
+        
+        
+});
+
+
+
+app.controller('bodyController', function($scope ,$route ,$location){
+      $scope.slideDirection = null; //一般留空
     $scope.navon = false;
 
-
-        $scope.$on("$locationChangeStart", function(event) {
-                //event.preventDefault();
+//$routeChangeSuccess
+//        $scope.$on("$locationChangeStart", function(event ,newUrl, oldUrl) {
+//        console.log('ddd');
+//        
+//        
+//});
+         $scope.$on("$locationChangeStart", function(event ,newUrl, oldUrl) {
                 try {
-                        if ($route.current.right) {
-                                slideDirection = 'slide-right-animate';
-                        } else {
-                                slideDirection = 'slide-left-animate';
+                        switch($route.current.direction){
+                                case 'left' :
+                                        $scope.slideDirection  = 'slide-from-left';
+                                        break;
+                                case 'right':
+                                        $scope.slideDirection  = 'slide-from-right';
+                                        break;
+                                default:
+                                        $scope.slideDirection  = null;
                         }
+                        
+                        if(!oldUrl){ //disable slide if firstload
+                                $scope.slideDirection  = null;
+                         }
+                           
 
                         //if islogo display logo ,else display title
                          $scope.title = $route.current.title;
@@ -42,22 +77,41 @@ app.controller('bodyController', function($scope ,$route){
                                 $scope.islogo = true;
                         } else {
                                 $scope.islogo = false;
-                        }
+                        }          
+                        
                 } catch (e) {
                 }
         });
-
-
-
-    $scope.getSlide = function() {
-	return slideDirection;
-    };
+ 
 
     $scope.toggleNav = function(){
             $scope.navon =  !$scope.navon;
     };
+    
+    $scope.offNav = function(){
+            $scope.navon = false;
+    };
+     $scope.onNav = function(){
+            $scope.navon = true;
+    };
+    
+    $scope.go = function(path){
+             $scope.offNav();
+            $location.path(path);
+           
+    };
 
 
+});
+
+
+app.controller('toReadController',function($scope, dataService){
+        var self = this;
+        dataService.getToReadData().success(function(data){
+                  angular.extend(self, data);
+                  
+        });
+        
 });
 
 
