@@ -1,0 +1,30 @@
+[
+        {
+                 "title" : "Movies",
+                "className": "interests-blue"
+        },
+        {
+                 "title" : "Travel",
+                "className": "interests-blue"
+        },
+        {
+                 "title" : "Fashion",
+                "className": "interests-blue"
+        },
+        {
+                 "title" : "Movies",
+                "className": "interests-white"
+        },
+        {
+                 "title" : "Finance",
+                "className": "interests-white"
+        },
+        {
+                 "title" : "Technology",
+                "className": "interests-blue"
+        },
+        {
+                 "title" : "Decoration",
+                "className": ""
+        }
+]

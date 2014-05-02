@@ -1,0 +1,21 @@
+<section ng-controller="interestsController as interests">
+        <div class="interests">
+                <h4>Check areas and feeds you are interested in</h4>
+
+                <a href="#" class="{{interest.className}}" ng-repeat="interest in interests">
+                        <p>{{interest.title}}</p>
+                </a>
+        </div>
+
+        <footer class="interests-footer">
+                <p>Receive news from the following networks</p>
+                <div class="receive">
+                        <a class="facebook-white"></a>
+                        <a class="twitter-blue"></a>
+                        <a class="youtube-blue"></a>
+                        <a class="linkedin-blue"></a>
+                </div>
+        </footer>
+</section>
+
+

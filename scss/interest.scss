@@ -1,0 +1,99 @@
+@import "compass";
+
+.interests{
+        @include clearfix;
+        h4{
+                font-size: 32px;
+                padding: 20px 0 20px 20px;
+                font-weight: normal;
+        }
+
+        a{
+                padding: 20px;
+                background-color: #444444;
+                background-position:  bottom right;
+                background-repeat: no-repeat;
+                width: 290px;
+                height: 208px;
+                display: block;
+                box-sizing: border-box;
+                text-decoration: none;
+                margin-left: 20px;
+                margin-top: 20px;
+                float: left;
+
+                &.interests-blue,&.interests-white{
+                        background-image: inline-image('interest-on.png');
+                }
+
+                &.interests-blue p{
+                        background: inline-image('broadcast-blue.png') no-repeat bottom left;
+                }
+                &.interests-white p{
+                        background: inline-image('broadcast-white.png') no-repeat bottom left;
+                }
+
+                p{
+                        width: 100%;
+                        height: 100%;
+                        color: #fff;
+                        font-size: 32px;
+                }
+        }
+
+}
+
+.interests-footer{
+        clear: both;
+        padding-top: 80px;
+        overflow: auto;
+       
+        p{
+                font-size: 32px;
+                text-align: center;
+                margin-bottom: 14px;
+        }
+
+        .receive{
+                 margin: 0 auto;
+                 overflow: auto;
+                 width: 122px * 4;
+                 a{
+                         width: 72px + 50px;
+                         height: 70px + 50px;
+                         display: block;
+                         float: left;
+                         text-align: center;
+
+                         &.facebook-white{
+                                 background: inline-image('facebook-white.png') no-repeat center center;
+                         }
+                         &.facebook-blue{
+                                 background: inline-image('facebook-blue.png') no-repeat center center;
+                         }
+                         &.twitter-white{
+                                 background: inline-image('twitter-white.png') no-repeat center center;
+                         }
+                          &.twitter-blue{
+                                 background: inline-image('twitter-blue.png') no-repeat center center;
+                         }
+                         &.youtube-white{
+                                 background: inline-image('youtube-white.png') no-repeat center center;
+                         }
+                         &.youtube-blue{
+                                 background: inline-image('youtube-blue.png') no-repeat center center;
+                         }
+                         &.linkedin-white{
+                                 background: inline-image('linkedin-white.png') no-repeat center center;
+                         }
+                         &.linkedin-blue{
+                                 background: inline-image('linkedin-blue.png') no-repeat center center;
+                         }
+                         
+                         
+                         
+                 }
+        }
+        
+}
+

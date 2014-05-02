@@ -3,7 +3,8 @@
 $main-black : #222;
 body{
         font-family: HelveticaNeue, Arial, Helvetica, sans-serif;
-        background: #222;
+        background: $main-black;
+        color: #fff;
 }
 
 .head{
@@ -11,6 +12,10 @@ body{
                 background: inline-image("go-back.png") no-repeat center center;
                 width: 90px;
                 float: left;
+                outline: none;
+                &:active,&:hover{
+                         outline: none;
+                }
         }
         .search{
                 background: inline-image("search.png") no-repeat center center;
@@ -35,7 +40,7 @@ body{
         h3{
                 text-align: center;
                 font-size: 36px;
-                color: #fff;
+                
                 position: absolute;
                 width: 100%;
                 overflow: hidden;
@@ -85,7 +90,7 @@ main{
                         position: absolute;
                         top: 15px;
                         left: 15px;
-                        color: #fff;
+                        
                 }
 
                 figcaption{
@@ -94,7 +99,7 @@ main{
                         bottom: 0px;
                         font-size: 32px;
                         line-height: 40px;
-                        color: #fff;
+                        
                         background-color: rgba(0,0,0,0.3);
                         box-sizing: border-box;
 
@@ -115,7 +120,7 @@ main{
                         position: absolute;
                         top: 15px;
                         left: 15px;
-                        color: #fff;
+                        
                 }
 
                 margin-bottom: 20px;
@@ -133,7 +138,7 @@ main{
                         position: absolute;
                         top: 15px;
                         left: 15px;
-                        color: #fff;
+                        
                 }
 
                 margin-bottom: 20px;

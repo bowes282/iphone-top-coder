@@ -11,7 +11,7 @@
         <link href="css/02-3.css" rel="stylesheet" type="text/css"/>
         <link href="css/animate.css" rel="stylesheet" type="text/css"/>
         <link href="css/toread.css" rel="stylesheet" type="text/css"/>
-        
+        <link href="css/interest.css" rel="stylesheet" type="text/css"/>
         
         <script src="js/angular.min.js" type="text/javascript"></script>
         <script src="js/angular-route.js" type="text/javascript"></script>
@@ -24,7 +24,7 @@
             
     <main ng-class="{'navon' : navon}">
              <header class="head">
-                    <a href="#" class="go-back"></a>
+                    <a href="#/Dashboard/Default" class="go-back"></a>
                     <h3  ng-class="{'logo': islogo}">{{title}}</h3>
                     <a class="menu" ng-click="toggleNav()"></a>
                     <a href="javascript:;" class="search"></a>
@@ -53,7 +53,7 @@
                                     <a  class="nav-list-read" ng-click="go('/Dashboard/ToRead')">To Read</a>
                             </li>
                             <li>
-                                    <a href="#" class="nav-list-interest" ng-click="offNav()">Interests Page</a>
+                                    <a  class="nav-list-interest" ng-click="go('/Dashboard/Interests')">Interests Page</a>
                             </li>
                             <li>
                                     <a href="#" class="nav-list-favorite" ng-click="offNav()">Favorites</a>

@@ -7,7 +7,7 @@ app.config(function($routeProvider) {
                         {
                                 //controller: 'bodyController',
                                 templateUrl: 'partials/default.html',
-                                direction: 'right',
+                                direction: 'left',
                                 title: 'logo'
                         })
                 .when('/Dashboard/ToRead',
@@ -17,11 +17,16 @@ app.config(function($routeProvider) {
                                 direction: 'left',
                                 title: 'To Read'
                         })
+                        .when('/Dashboard/Interests',
+                        {
+                                controller: 'interestsController',
+                                templateUrl: 'partials/interests.html',
+                                direction: 'left',
+                                title: 'Interests Page'
+                        })
                 .otherwise(
                         {
-                                redirectTo: '/Dashboard/Default',
-                                //direction: 'right',
-                                //title: 'logo'
+                                redirectTo: '/Dashboard/Default'
                         }
 
                 );
@@ -31,12 +36,16 @@ app.config(function($routeProvider) {
 app.service('dataService',function($http){
         
 
-        this.getToReadData = function() {
+        this.getToRead = function() {
                 return $http.get('data/toread.json', {
                         'cache': true
                 });
         };
-        
+        this.getInterests = function(){
+               return $http.get('data/interests.json', {
+                        'cache': true
+                }); 
+        };
         
         
 });
@@ -44,7 +53,7 @@ app.service('dataService',function($http){
 
 
 app.controller('bodyController', function($scope ,$route ,$location){
-      $scope.slideDirection = null; //一般留空
+       $scope.slideDirection = null; //一般留空
     $scope.navon = false;
 
 //$routeChangeSuccess
@@ -53,7 +62,7 @@ app.controller('bodyController', function($scope ,$route ,$location){
 //        
 //        
 //});
-         $scope.$on("$locationChangeStart", function(event ,newUrl, oldUrl) {
+         $scope.$on("$routeChangeSuccess", function(event ,newUrl, oldUrl) {
                 try {
                         switch($route.current.direction){
                                 case 'left' :
@@ -83,6 +92,8 @@ app.controller('bodyController', function($scope ,$route ,$location){
                 }
         });
  
+ 
+ 
 
     $scope.toggleNav = function(){
             $scope.navon =  !$scope.navon;
@@ -107,7 +118,17 @@ app.controller('bodyController', function($scope ,$route ,$location){
 
 app.controller('toReadController',function($scope, dataService){
         var self = this;
-        dataService.getToReadData().success(function(data){
+        dataService.getToRead().success(function(data){
+                  angular.extend(self, data);
+                  
+        });
+        
+});
+
+
+app.controller('interestsController',function($scope, dataService){
+        var self = this;
+        dataService.getInterests().success(function(data){
                   angular.extend(self, data);
                   
         });
