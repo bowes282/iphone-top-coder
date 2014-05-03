@@ -180,13 +180,16 @@ app.controller('searchController', function($scope, dataService) {
         var timer;
         $scope.doSearch = function(){
                 window.clearTimeout(timer);
-                
+                if($scope.searchInput == ""){
+                        $scope.show = true;
+                        return;
+                }
+
                 timer = window.setTimeout(function(){
-                                dataService.doSearch().success(function(data){
+                                dataService.doSearch($scope.searchInput).success(function(data){
                                         $scope.searchafter = data;
                                         $scope.show = false;
                                 });
-                        
                         
                 },400);
         };
@@ -211,8 +214,7 @@ app.controller('searchController', function($scope, dataService) {
        $scope.nomovieLimit = function(){
                $scope.movieLimit = $scope.searchafter.movies.length;
        };
- 
+  
 
-        
 });
 

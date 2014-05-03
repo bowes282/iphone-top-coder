@@ -4,7 +4,7 @@
                 <p>Search for categories, people, etc</p>
         </header>
 
-        <div class="search-before" ng-show="show">
+        <div class="search-before animation-fade"  ng-show="show">
                 <article>
                         <h3> Categories</h3>
                         <a href="">Technology</a>
@@ -25,18 +25,18 @@
                 <article>
                         <h3> People</h3>
                         
-                        <div ng-repeat="people in searchbefore.people">
+                        <div ng-repeat="people in searchbefore.people" >
                                 <a href="">{{people.name}} </a>
                                 <span>{{people.profession}}</span>
                         </div>
                 </article>
         </div>
         
-        <div class="search-after" ng-hide="show">
+        <div class="search-after animation-fade" ng-hide="show">
                             <article>
                                     <h3>Topics<a href="javascript:;" ng-click="noTopicLimit()">More result</a></h3>
                                     
-                                    <figure ng-repeat="topic in searchafter.topics | limitTo : topicLimit">
+                                    <figure ng-repeat="topic in searchafter.topics | limitTo : topicLimit" class="animation-inout">
                                             <img ng-src="{{topic.src}}" alt="{{topic.title}}" title="{{topic.title}}">
                                             <a href="{{topic.link}}">
                                                     <h4>{{topic.title}}</h4>
@@ -48,14 +48,14 @@
                             
                             <article>
                                     <h3>Tweets<a href="javascript:" ng-click="notweetLimit()">More result</a></h3>
-                                    <a href="{{tweet.link}}" class="search-after-tweets" ng-repeat="tweet in searchafter.tweets | limitTo: tweetLimit">{{tweet.text}}</a>
+                                    <a href="{{tweet.link}}" class="search-after-tweets animation-inout" ng-repeat="tweet in searchafter.tweets | limitTo: tweetLimit">{{tweet.text}}</a>
 
                             </article>      
                             
                             <article>
                                     <h3>Movies<a href="javascript:" ng-click="nomovieLimit()">More result</a></h3>
                                     
-                                    <figure ng-repeat="movie in searchafter.movies | limitTo : movieLimit">
+                                    <figure ng-repeat="movie in searchafter.movies | limitTo : movieLimit" class="animation-inout">
                                             <img ng-src="{{movie.src}}" alt="{{movie.title}}" title="{{movie.title}}">
                                             <a href="{{movie.link}}">
                                                     <h4>{{movie.title}}</h4>

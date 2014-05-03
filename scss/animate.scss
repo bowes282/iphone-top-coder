@@ -11,11 +11,12 @@
 //angular 全屏侧滑效果
 // $direction is enter position
 @mixin angular-animate($direciton){
-    &.ng-enter{
+        @include trans;
+    &.ng-enter{ //animate start state , from leftoutside to center
         z-index: 2;
         -webkit-transform:translateX($direciton); 
-        @include trans;
-        &.ng-enter-active{
+        //@include trans;
+        &.ng-enter-active{ //animate end state
             position: absolute;
             z-index:1;
             -webkit-transform:translateX(0); 
@@ -23,26 +24,64 @@
     }
 
     &.ng-leave{
-        @include trans;
         &.ng-leave-active{
         }
     }
 }
 
+//angular fadein fadeout transition (display: none ==> display:block)
+.animation-fade {
+        @include trans;
+
+        &.ng-hide-add { //animate start state , from visible to visible
+                //display:block!important; //remove because of relative position
+                opacity: 1;
+        }
+        
+        &.ng-hide-add-active{ //animate end state
+                opacity: 0;
+        }
+        
+        &.ng-hide-remove { //animate start state ,from invisible to visible
+                display:block!important;
+                opacity: 0;
+        }
+        
+        &.ng-hide-remove-active{ //animate end state
+                opacity: 1;
+        }
+}
+
+//angular fadein fadeout transition (element none to element block)
+.animation-inout{
+ @include trans;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+  &.ng-leave {
+    opacity: 1;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+
+
 .slide-from-left{
     position : absolute;
     width: 100%;
-    //height: 100%;
-    overflow: hidden;
 @include angular-animate(-100%);
+       // overflow: auto;
 }
 
 
 .slide-from-right{
     position : absolute;
     width: 100%;
-    //height: 100%;
-    overflow: hidden;
  @include angular-animate(100%);
 }
 
