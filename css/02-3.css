@@ -28,10 +28,15 @@
   margin-top: 9px;
   color: #2c95dd;
   font-size: 36px;
+  font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;
 }
 .nav .nav-head .nav-head-info p {
   color: #999;
   font-size: 28px;
+  font-family: Helvetica Neue , Helvetica Neue , Helvetica;
+}
+.nav .nav-list {
+  font-family: Helvetica Neue Medium, Helvetica Neue, Helvetica;
 }
 .nav .nav-list li {
   padding: 0 20px;

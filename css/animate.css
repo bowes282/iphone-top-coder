@@ -6,10 +6,11 @@
 .slide-from-left.ng-enter {
   z-index: 2;
   -webkit-transform: translateX(-100%);
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+  /*    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;*/
+  transition: 0.4s all;
 }
 .slide-from-left.ng-enter.ng-enter-active {
   position: absolute;
@@ -17,10 +18,11 @@
   -webkit-transform: translateX(0);
 }
 .slide-from-left.ng-leave {
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+  /*    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;*/
+  transition: 0.4s all;
 }
 
 .slide-from-right {
@@ -31,10 +33,11 @@
 .slide-from-right.ng-enter {
   z-index: 2;
   -webkit-transform: translateX(100%);
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+  /*    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;*/
+  transition: 0.4s all;
 }
 .slide-from-right.ng-enter.ng-enter-active {
   position: absolute;
@@ -42,8 +45,9 @@
   -webkit-transform: translateX(0);
 }
 .slide-from-right.ng-leave {
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+  /*    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;*/
+  transition: 0.4s all;
 }

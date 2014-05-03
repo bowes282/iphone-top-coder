@@ -1,0 +1,119 @@
+.search-panel{
+        padding: 20px;
+        header{
+                margin: 0 20px;
+                overflow: hidden;
+                .search-input{
+                        outline: none;
+                        width: 100%;
+                        height: 60px;
+                        font-size: 28px;
+                        line-height: 1.5;
+                        color: #fff;
+                        background-color: #393939;
+                        border:0;
+                        padding-left: 65px;
+                        background-image: inline-image('search-input.png');
+                        background-repeat: no-repeat;
+                        background-position: 15px 14px;
+
+                }
+                
+                p{
+                        font-size: 32px;
+                        height: 64px;
+                        line-height: 64px;
+                        color: #999;
+                        font-weight: normal;
+                }
+        }
+        
+        
+        .search-before{
+                article{
+                        padding: 0 20px;
+                        padding-bottom: 31px;
+                        h3{
+                                height: 59px;
+                                line-height: 59px;
+                                border-bottom: 2px solid #4a4b4e;
+                                font-size: 32px;
+                                font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;;
+                        }
+
+                        a{
+                                margin-top: 30px;
+                                margin-bottom: 10px;
+                                display: block;
+                                color: #2c95dd;
+                                text-decoration: none;
+                                font-size: 36px;
+                                position: relative;
+                        }
+                        span{
+                                display: block;
+                                margin-top: -10px;
+                                font-size: 28px;
+                                color:#999;
+
+                        }
+                }
+        }
+      
+        .search-after{
+                
+                article{
+                        padding: 0 20px;
+                        padding-bottom: 45px;
+                        h3{
+                                height: 59px;
+                                line-height: 59px;
+                                border-bottom: 2px solid #4a4b4e;
+                                font-size: 28px;
+                                font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;
+                                a{
+                                        color: #2c95dd;
+                                        font-size: 28px;
+                                        float: right;
+                                        text-decoration: none;
+                                }
+                        }
+                        
+                        figure{
+                                margin-top: 20px;
+                                overflow: auto;
+                                img{
+                                        display: block;
+                                        float: left;
+                                }
+                                
+                                a{
+                                        margin-left: 140px;
+                                        padding-top: 18px;
+                                        display: block;
+                                        h4{
+                                                font-size: 32px;
+                                                color: #2c95dd;
+                                        }
+                                        p{
+                                                margin-top: 2px;
+                                                font-size: 28px;
+                                                color: #999;
+                                        }
+                                }
+                        }
+                        
+                        
+                        .search-after-tweets{
+                                margin-top: 40px;
+                                color: #2c95dd;
+                                font-size: 36px;
+                                display: block;
+                        }
+                        
+                }
+                 
+                
+        }
+
+}

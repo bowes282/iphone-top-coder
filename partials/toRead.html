@@ -13,11 +13,14 @@
                 <img src="img/toread-3.png" alt="" title="">
                 <figcaption>Aenean nec sapien massa</figcaption>
         </figure>-->
+        <a href="">
+                <figure ng-repeat="toread in toreads" >
+                        <img ng-src="{{toread.src}}" alt="{{toread.alt}}" title="{{toread.title}}" width="600" height="310">
+                        <figcaption>{{toread.caption}}</figcaption>
+                </figure>
+        </a>        
         
-        <figure ng-repeat="toread in toreads" >
-                <img ng-src="{{toread.src}}" alt="{{toread.alt}}" title="{{toread.title}}">
-                <figcaption>{{toread.caption}}</figcaption>
-        </figure>
+        
         
 </div>
 

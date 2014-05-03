@@ -1,0 +1,42 @@
+{
+        "mostRead": [
+                {
+                        "title": "Lorem ipsum dolor sit amet",
+                        "link": "#/Technology/1001"
+                },
+                {
+                        "title": "Consectetur adipiscing elit",
+                        "link": "#/Technology/1002"
+
+                },
+                {
+                        "title": "Fusce mattis augue sit amet velit",
+                        "link": "#/Technology/1003"
+
+                },
+                {
+                        "title": "Elementum at mollis mauris hendrerit",
+                        "link": "#/Technology/1004"
+
+                }
+
+        ],
+        "people" : [
+                {
+                        "name" : "Tom Cruise",
+                        "profession" : "Actor"
+                },
+                {
+                        "name" : "Van Hallen",
+                        "profession" : "Musician, Guitarist"
+                },
+                {
+                        "name" : "Andrew Garfield",
+                        "profession" : "Actor, Amazing Spiderman 2"
+                },
+                {
+                        "name" : "Peter Piere White",
+                        "profession" : "Chef"
+                }
+        ]
+}

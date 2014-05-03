@@ -10,6 +10,7 @@
     overflow: hidden;
     height: 1136px;
     
+    
     .nav-head{
         img{
             display: block;
@@ -24,10 +25,12 @@
                 margin-top: 9px;
                 color: #2c95dd;
                 font-size: 36px;
+                font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;
             }
             p{
                 color: #999;
                 font-size: 28px;
+                font-family: Helvetica Neue , Helvetica Neue , Helvetica;;
             }
         }
         overflow: auto;
@@ -37,6 +40,7 @@
     }
     
     .nav-list{
+            font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica ;
         li{
             padding: 0 20px;
             &:active, &:hover{

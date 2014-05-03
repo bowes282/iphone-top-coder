@@ -1,20 +1,30 @@
 @import "compass/reset";
 
 $main-black : #222;
-body{
-        font-family: HelveticaNeue, Arial, Helvetica, sans-serif;
+body {
+        font-family: Helvetica Neue , Helvetica , Arial, sans-serif;
         background: $main-black;
+        color: #fff;
+}
+input{
+        font-family: Helvetica Neue Light, Helvetica Neue , Helvetica , Arial, sans-serif;
+}
+
+a{
+        text-decoration: none;
         color: #fff;
 }
 
 .head{
+        //font-family: Helvetica Neue Light, Helvetica Neue , Helvetica , Arial, sans-serif;
+        font-family: Helvetica Neue Medium, Helvetica Neue , Helvetica , Arial, sans-serif;
         .go-back{
                 background: inline-image("go-back.png") no-repeat center center;
                 width: 90px;
                 float: left;
                 outline: none;
                 &:active,&:hover{
-                         outline: none;
+                        outline: none;
                 }
         }
         .search{
@@ -26,9 +36,9 @@ body{
                 background: inline-image("menu.png") no-repeat left center;
                 width: 85px;
                 float: right;
-                
+
                 &:active{
-                         background: inline-image("menu-active.png") no-repeat left center;
+                        background: inline-image("menu-active.png") no-repeat left center;
                 }
         }
         a{
@@ -40,7 +50,7 @@ body{
         h3{
                 text-align: center;
                 font-size: 36px;
-                
+
                 position: absolute;
                 width: 100%;
                 overflow: hidden;
@@ -59,12 +69,17 @@ body{
 }
 
 main{
-         transition: 0.4s all;
-         position: relative;
+        -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+        -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+        -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+        transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+        position: relative;
         &.navon{
                 -webkit-transform: translateX(-430px);
                 -transform: translateX(-430px);
+                -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
         }
+
 }
 
 .black{
@@ -80,7 +95,7 @@ main{
 
         .category-a{
                 position: relative;
-                
+
                 img{
                         width: 600px;
                 }
@@ -90,7 +105,8 @@ main{
                         position: absolute;
                         top: 15px;
                         left: 15px;
-                        
+                        font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;;
+
                 }
 
                 figcaption{
@@ -99,7 +115,7 @@ main{
                         bottom: 0px;
                         font-size: 32px;
                         line-height: 40px;
-                        
+                        font-family: Helvetica Neue Light , Helvetica Neue , Helvetica;;
                         background-color: rgba(0,0,0,0.3);
                         box-sizing: border-box;
 
@@ -110,9 +126,9 @@ main{
 
         .category-b,.category-c{
                 position: relative;
-                
+
                 img{
-                         width: 290px;
+                        width: 290px;
                 }
 
                 h3{
@@ -120,13 +136,13 @@ main{
                         position: absolute;
                         top: 15px;
                         left: 15px;
-                        
+                        font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;;
                 }
 
                 margin-bottom: 20px;
         }
-        
-        
+
+
         .category-d{
                 position: relative;
                 img{
@@ -138,7 +154,7 @@ main{
                         position: absolute;
                         top: 15px;
                         left: 15px;
-                        
+                        font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;;
                 }
 
                 margin-bottom: 20px;
@@ -147,6 +163,7 @@ main{
         .category-a,.category-b,.category-c,.category-d{
                 margin-left: 20px;
                 float: left;
+
         }
-        
+
 }

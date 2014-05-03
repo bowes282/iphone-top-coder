@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" ng-cloak>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -12,6 +12,8 @@
         <link href="css/animate.css" rel="stylesheet" type="text/css"/>
         <link href="css/toread.css" rel="stylesheet" type="text/css"/>
         <link href="css/interest.css" rel="stylesheet" type="text/css"/>
+        <link href="css/search.css" rel="stylesheet" type="text/css"/>
+        
         
         <script src="js/angular.min.js" type="text/javascript"></script>
         <script src="js/angular-route.js" type="text/javascript"></script>
@@ -20,13 +22,13 @@
         <script src="js/app.js" type="text/javascript"></script>
         
     </head>
-    <body ng-controller="bodyController" ng-swipe-left="onNav()" ng-swipe-right="offNav()"> 
+    <body ng-controller="bodyController" ng-swipe-left="onNav()" ng-swipe-right="offNav()" > 
             
     <main ng-class="{'navon' : navon}">
              <header class="head">
                     <a href="#/Dashboard/Default" class="go-back"></a>
                     <h3  ng-class="{'logo': islogo}">{{title}}</h3>
-                    <a class="menu" ng-click="toggleNav()"></a>
+                    <a href="javascript:;" class="menu" ng-click="toggleNav()"></a>
                     <a href="javascript:;" class="search"></a>
             </header>
             
@@ -44,7 +46,7 @@
 
                     <ul class="nav-list">
                             <li>
-                                    <a href="#" class="nav-list-search" ng-click="offNav()">Search</a>
+                                    <a class="nav-list-search" ng-click="go('/Dashboard/Search')">Search</a>
                             </li>
                             <li>
                                     <a class="nav-list-home" ng-click="go('/Dashboard/Default')">Home</a>
@@ -56,16 +58,16 @@
                                     <a  class="nav-list-interest" ng-click="go('/Dashboard/Interests')">Interests Page</a>
                             </li>
                             <li>
-                                    <a href="#" class="nav-list-favorite" ng-click="offNav()">Favorites</a>
+                                    <a class="nav-list-favorite" ng-click="offNav()">Favorites</a>
                             </li>
                             <li>
-                                    <a href="#" class="nav-list-feed" ng-click="offNav()">Custom Feed</a>
+                                    <a class="nav-list-feed" ng-click="offNav()">Custom Feed</a>
                             </li>
                             <li>
-                                    <a href="#" class="nav-list-settings" ng-click="offNav()">Settings</a>
+                                    <a class="nav-list-settings" ng-click="offNav()">Settings</a>
                             </li>
                             <li>
-                                    <a href="#" class="nav-list-logout" ng-click="offNav()">Logout</a>
+                                    <a class="nav-list-logout" ng-click="offNav()">Logout</a>
                             </li>
                     </ul>
             </nav>

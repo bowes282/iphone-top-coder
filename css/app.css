@@ -55,12 +55,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-  font-family: HelveticaNeue, Arial, Helvetica, sans-serif;
+  font-family: Helvetica Neue , Helvetica , Arial, sans-serif;
   background: #222222;
   color: #fff;
 }
 
+input {
+  font-family: Helvetica Neue Light, Helvetica Neue , Helvetica , Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .head {
+  font-family: Helvetica Neue Medium, Helvetica Neue , Helvetica , Arial, sans-serif;
   border-bottom: 2px solid #303030;
   background: #222222;
   overflow: hidden;
@@ -108,12 +118,16 @@ body {
 }
 
 main {
-  transition: 0.4s all;
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   position: relative;
 }
 main.navon {
   -webkit-transform: translateX(-430px);
   -transform: translateX(-430px);
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
 }
 
 .black {
@@ -137,6 +151,7 @@ main.navon {
   position: absolute;
   top: 15px;
   left: 15px;
+  font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;
 }
 .default .category-a figcaption {
   position: absolute;
@@ -144,6 +159,7 @@ main.navon {
   bottom: 0px;
   font-size: 32px;
   line-height: 40px;
+  font-family: Helvetica Neue Light , Helvetica Neue , Helvetica;
   background-color: rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
 }
@@ -159,6 +175,7 @@ main.navon {
   position: absolute;
   top: 15px;
   left: 15px;
+  font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;
 }
 .default .category-d {
   position: relative;
@@ -172,6 +189,7 @@ main.navon {
   position: absolute;
   top: 15px;
   left: 15px;
+  font-family: Helvetica Neue Medium , Helvetica Neue , Helvetica;
 }
 .default .category-a, .default .category-b, .default .category-c, .default .category-d {
   margin-left: 20px;
