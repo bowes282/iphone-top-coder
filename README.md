@@ -17,6 +17,7 @@ http://community.topcoder.com/tc?module=ProjectDetail&pj=30042111
 参考 http://www.quirksmode.org/blog/archives/2013/10/initialscale1_m.html 这篇文章
 
 3、因为不需要兼容 320*480了，320*640的也会缩放1/2，不用担心。
+
 4、图片background-size 不需要写；图片切成1:1大小的就行。
 
 
