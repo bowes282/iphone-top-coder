@@ -8,9 +8,10 @@ http://community.topcoder.com/tc?module=ProjectDetail&pj=30042111
 
 2、view port: 写死了640大小
 
- <pre>
+```ruby
 <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=.5" />
-</pre>
+
+```
 
 
 参考 http://www.quirksmode.org/blog/archives/2013/10/initialscale1_m.html 这篇文章
