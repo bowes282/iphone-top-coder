@@ -5,6 +5,7 @@
 .star-icon{background: url(../img/StarIcon.png) no-repeat center;}
 .share-icon{background: url(../img/shareIcon.png) no-repeat center;}
 .rss-icon{background: url(../img/RssIcon.png) no-repeat center;}
+.fn-hide{display: none;}
 
 .comments{padding: 0 20px;}
 .comments .details{padding: 10px 0 10px 10px;border-bottom:2px solid #303030;}
