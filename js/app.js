@@ -288,6 +288,25 @@ app.controller('categoryController', function($scope, dataService , $filter) {
 	 $scope.selectPage = function(page){
 		$scope.currentPage = page;
 	 };
+         
+                 $scope.selectPrev = function(){
+                        if($scope.currentPage === 1){
+                                return;
+                        }else{
+                                $scope.currentPage -= 1;
+                        }
+                        
+                 };
+                 
+                 $scope.selectNext = function(){
+                        if($scope.currentPage === Math.ceil( $scope.items.length / $scope.pageSize)){
+                                return;
+                        }else{
+                                $scope.currentPage += 1;
+                        }
+                        
+                 };
+         
 	 
 
 });

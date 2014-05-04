@@ -1,6 +1,6 @@
 <section class="category-section" ng-controller="categoryController">
 
-    <a href="{{item.link}}" ng-repeat="item in getItems()" class="">
+    <a href="{{item.link}}" ng-repeat="item in getItems()">
         <figure>
             <img ng-src="{{item.src}}" alt="{{item.title}}" title="{{item.title}}">
             <figcaption>
@@ -12,11 +12,11 @@
     </a>
 
     <div class="pagination">
-        <a href="javascript:;" class="prev">Prev</a>
+        <a href="javascript:;" class="prev" ng-click="selectPrev()">Prev</a>
         <a href="javascript:;" class="pagenum" ng-repeat="page in getPageList()" ng-class="{'active' : isactive(page)}" ng-click="selectPage(page)">
             {{page}}
         </a>
-        <a href="javascript:;" class="next">Next</a>
+        <a href="javascript:;" class="next" ng-click="selectNext()">Next</a>
     </div>
 
 </section>

@@ -1,5 +1,7 @@
 .search-panel{
-        padding: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
         header{
                 margin: 0 20px;
                 overflow: hidden;
@@ -61,7 +63,6 @@
         }
       
         .search-after{
-                
                 article{
                         padding: 0 20px;
                         padding-bottom: 45px;
@@ -81,7 +82,8 @@
                         
                         figure{
                                 margin-top: 20px;
-                                overflow: auto;
+                                overflow: hidden;
+                                width: 100%;
                                 img{
                                         display: block;
                                         float: left;
