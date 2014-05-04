@@ -11,33 +11,13 @@
         <link href="css/02-3.css" rel="stylesheet" type="text/css"/>
         <link href="css/toread.css" rel="stylesheet" type="text/css"/>
         <link href="css/interest.css" rel="stylesheet" type="text/css"/>
+        <link href="css/comment.css" rel="stylesheet" type="text/css"/>
         
         
         <script src="js/angular.min.js" type="text/javascript"></script>
         <script src="js/angular-route.js" type="text/javascript"></script>
         <script src="js/angular-animate.js" type="text/javascript"></script>
         <script src="js/app.js" type="text/javascript"></script>
-
-        <style>
-        .comments{padding: 0 20px;}
-        .comments .details{padding: 10px 0 10px 10px;border-bottom:2px solid #303030;}
-        .comments .portrait{float: left;margin:10px;width: 66px;height: 66px;position: relative;}
-        .comments .portrait img{max-width: 100%;}
-        .comments .description{margin-left: 84px;}
-        .comments .description .username{font-size: 28px;}
-        .comments .description .times{float: right;color: #9f969b;font-size: 24px;}
-        .comments p{margin: 10px;font-size: 28px;}
-        .comments .vote a:after{content:"|";color:#828282;padding: 0 8px 0 16px;}
-        .comments .vote a:last-child:after{content:"";}
-        .comments .blue{color: #2c95dd;}
-        .add-comments{padding: 20px 0;margin-right: 20px;}
-        .add-comments textarea{height: 60px;background: #333;border:none;border-radius:4px;width: 100%;font-size: 28px;line-height: 60px;padding-left: 20px;}
-        .clearfix{overflow: hidden;}
-        .bookmarks-icon{background: url(img/BookmarksIcon.png) no-repeat center;}
-        .star-icon{background: url(img/StarIcon.png) no-repeat center;}
-        .share-icon{background: url(img/shareIcon.png) no-repeat center;}
-        .rss-icon{background: url(img/RssIcon.png) no-repeat center;}
-        </style>
     </head>
     <body>
         
@@ -61,7 +41,7 @@
                             <span class="times">20 minutes ago</span>
                         </p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</p>
-                        <p class="vote">
+                        <p class="component-rating">
                             <a href="#" class="blue">Like</a> 
                             <a href="#" class="blue">Dislikes</a> 
                             <a href="#" class="blue">Reply</a>
@@ -78,11 +58,11 @@
                             <span class="times">40 minutes ago</span>
                         </p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <span class="blue">@incididunt</span> labore et dolore magna aliqua.</p>
-                        <p class="vote">
+                        <div class="component-rating">
                             <a href="#" class="blue">Like</a> 
                             <a href="#" class="blue">Dislikes</a> 
                             <a href="#" class="blue">Reply</a>
-                        </p>
+                        </div>
                     </div>
                 </div>
                 <div class="details clearfix">
@@ -95,11 +75,11 @@
                             <span class="times">1 hour ago</span>
                         </p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</p>
-                        <p class="vote">
+                        <div class="component-rating">
                             <a href="#" class="blue">Like</a> 
                             <a href="#" class="blue">Dislikes</a> 
                             <a href="#" class="blue">Reply</a>
-                        </p>
+                        </div>
                     </div>
                 </div>
                 <div class="details clearfix">
@@ -112,11 +92,11 @@
                             <span class="times">1 hour ago</span>
                         </p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit magna aliqua.</p>
-                        <p class="vote">
+                        <div class="component-rating">
                             <a href="#" class="blue">Like</a> 
                             <a href="#" class="blue">Dislikes</a> 
                             <a href="#" class="blue">Reply</a>
-                        </p>
+                        </div>
                     </div>
                 </div>
                 <div class="add-comments">
