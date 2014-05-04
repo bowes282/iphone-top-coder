@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-cloak>
+<html ng-app="app">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -24,6 +24,8 @@
     </head>
     <body ng-controller="bodyController" ng-swipe-left="onNav()" ng-swipe-right="offNav()" > 
             
+     <div class="splash animation-fade-out" ng-hide="hideafterload"></div>
+     
     <main ng-class="{'navon' : navon}">
              <header class="head">
                     <a href="#/Dashboard/Default" class="go-back"></a>
@@ -31,7 +33,6 @@
                     <a href="javascript:;" class="menu" ng-click="toggleNav()"></a>
                     <a href="javascript:;" class="search"></a>
             </header>
-            
             
             <div ng-view  ng-class="slideDirection" class="black"></div>
 

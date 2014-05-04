@@ -79,7 +79,12 @@ app.service('dataService', function($http) {
 app.controller('bodyController', function($scope, $route, $location) {
         $scope.slideDirection = null;
         $scope.navon = false;
-
+	$scope.hideafterload = false;
+	
+	window.setTimeout(function(){
+		$scope.hideafterload = true; //delay 100ms seconds show splash
+	},100);
+		
         $scope.$on("$routeChangeSuccess", function(event, newUrl, oldUrl) {
                 try {
                         //get slide direction from url mappings
