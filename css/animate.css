@@ -19,6 +19,21 @@
   opacity: 1;
 }
 
+.animation-fade-out {
+  /*    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;*/
+  transition: 0.4s all;
+}
+.animation-fade-out.ng-hide-add {
+  display: block !important;
+  opacity: 1;
+}
+.animation-fade-out.ng-hide-add-active {
+  opacity: 0;
+}
+
 .animation-inout {
   /*    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
       -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;

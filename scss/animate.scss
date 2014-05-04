@@ -32,7 +32,7 @@
 //angular fadein fadeout transition (display: none ==> display:block)
 .animation-fade {
         @include trans;
-
+        
         &.ng-hide-add { //animate start state , from visible to visible
                 //display:block!important; //remove because of relative position
                 opacity: 1;
@@ -49,6 +49,19 @@
         
         &.ng-hide-remove-active{ //animate end state
                 opacity: 1;
+        }
+}
+
+
+.animation-fade-out{
+         @include trans;
+        &.ng-hide-add { //animate start state , from visible to visible
+                display:block!important; 
+                opacity: 1;
+        }
+        
+        &.ng-hide-add-active{ //animate end state
+                opacity: 0;
         }
 }
 

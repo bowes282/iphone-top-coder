@@ -67,29 +67,29 @@
                          float: left;
                          text-align: center;
 
-                         &.facebook-white{
-                                 background: inline-image('facebook-white.png') no-repeat center center;
+                         &.facebook-white{ //reuseable image
+                                 background: image-url('facebook-white.png') no-repeat center center;
                          }
                          &.facebook-blue{
-                                 background: inline-image('facebook-blue.png') no-repeat center center;
+                                 background: image-url('facebook-blue.png') no-repeat center center;
                          }
                          &.twitter-white{
-                                 background: inline-image('twitter-white.png') no-repeat center center;
+                                 background: image-url('twitter-white.png') no-repeat center center;
                          }
                           &.twitter-blue{
-                                 background: inline-image('twitter-blue.png') no-repeat center center;
+                                 background: image-url('twitter-blue.png') no-repeat center center;
                          }
                          &.youtube-white{
-                                 background: inline-image('youtube-white.png') no-repeat center center;
+                                 background: image-url('youtube-white.png') no-repeat center center;
                          }
                          &.youtube-blue{
-                                 background: inline-image('youtube-blue.png') no-repeat center center;
+                                 background: image-url('youtube-blue.png') no-repeat center center;
                          }
                          &.linkedin-white{
-                                 background: inline-image('linkedin-white.png') no-repeat center center;
+                                 background: image-url('linkedin-white.png') no-repeat center center;
                          }
                          &.linkedin-blue{
-                                 background: inline-image('linkedin-blue.png') no-repeat center center;
+                                 background: image-url('linkedin-blue.png') no-repeat center center;
                          }
                          
                          
