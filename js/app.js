@@ -5,7 +5,7 @@ app.config(function($routeProvider) {
         $routeProvider
                 .when('/Dashboard/Default',
                         {
-                                //controller: 'bodyController',
+                                controller: 'defaultController',
                                 templateUrl: 'partials/default.html',
                                 direction: 'left',
                                 title: 'logo'
@@ -31,6 +31,20 @@ app.config(function($routeProvider) {
                                 direction: 'left',
                                 title: 'Search'
                         })
+		.when('/Category/Technology',
+                        {
+                                controller: 'categoryController',
+                                templateUrl: 'partials/category.html',
+                                direction: 'left',
+                                title: 'Technology'
+                        })
+		.when('/Category/Design',
+                        {
+                                controller: 'categoryController',
+                                templateUrl: 'partials/category.html',
+                                direction: 'left',
+                                title: 'Design'
+                        })				
                 .otherwise(
                         {
                                 redirectTo: '/Dashboard/Default'
@@ -40,7 +54,7 @@ app.config(function($routeProvider) {
 });
 
 
-app.service('dataService', function($http) {
+app.service('dataService', function($http , $route) {
 
 
         this.getToRead = function() {
@@ -61,7 +75,6 @@ app.service('dataService', function($http) {
         };
         
         this.doSearch = function(data){
-
                 //should use $http.post 
                 return  $http.get('data/dosearch.json',{
                         'cache': true
@@ -71,6 +84,27 @@ app.service('dataService', function($http) {
 //                });
 
         };
+	
+	this.getDefault = function(){
+		return $http.get('data/default.json',{
+                        'cache': true
+                });
+	};
+		
+		
+	this.getCategoryData = function(){
+		 var title = $route.current.title;
+		 var url;
+		 if(title === 'Technology'){
+			 url = 'data/technology.json';
+		 }else if(title === 'Design'){
+			  url = 'data/design.json';
+		 }
+	
+		return  $http.get( url ,{
+                        'cache': true
+                });
+	};
 
 });
 
@@ -156,21 +190,26 @@ app.controller('bodyController', function($scope, $route, $location) {
 
 });
 
+app.controller('defaultController' , function($scope , dataService){
+	dataService.getDefault().success(function(data){
+		$scope.defaults = data;
+	});
+	
+});
+
 
 app.controller('toReadController', function($scope, dataService) {
-        var self = this;
         dataService.getToRead().success(function(data) {
-                angular.extend(self, data);
-
+			$scope.toreads = data;
+				
         });
 
 });
 
 
 app.controller('interestsController', function($scope, dataService) {
-        var self = this;
         dataService.getInterests().success(function(data) {
-                angular.extend(self, data);
+                 $scope.interests = data;
 
         });
 
@@ -219,7 +258,68 @@ app.controller('searchController', function($scope, dataService) {
        $scope.nomovieLimit = function(){
                $scope.movieLimit = $scope.searchafter.movies.length;
        };
-  
+});
 
+
+app.controller('categoryController', function($scope, dataService , $filter) {
+	dataService.getCategoryData().success(function(data){
+		$scope.items = data;
+	});
+	$scope.currentPage = 1;
+	$scope.pageSize = 2;
+	$scope.pageCount = 3;
+	
+	$scope.getItems = function(){
+		return $filter('range')($scope.items , $scope.currentPage , $scope.pageSize);
+	};
+	 
+	 $scope.getPageList = function(){
+		return $filter('pageList')($scope.items , $scope.currentPage , $scope.pageSize , $scope.pageCount);
+	 };
+	 
+	 $scope.isactive =  function(page){
+		if($scope.currentPage === page){
+			return true;
+		}else{
+			return false;
+		}
+	 };
+	 
+	 $scope.selectPage = function(page){
+		$scope.currentPage = page;
+	 };
+	 
+
+});
+
+
+app.filter("range", function() {
+	return function(data, curpage, size) {
+		if (!angular.isArray(data)) {
+			return;
+		}
+		return data.slice((curpage - 1) * size, curpage * size);
+	};
+});
+
+app.filter("pageList", function() {
+	return function(data, curpage, size ,pageCount) {
+		if (angular.isArray(data)) {
+			var result = [];
+			var page_count = Math.ceil(data.length / size);
+
+			var start = Math.max(1, curpage - parseInt(pageCount / 2));
+			var end = Math.min(page_count, start + pageCount - 1);
+			start = Math.max(1, end - pageCount + 1);
+
+			for (var i = start; i <= end; i++) {
+				result.push(i);
+			}
+
+			return result;
+		} else {
+			return data;
+		}
+	};
 });
 

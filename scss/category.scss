@@ -1,0 +1,74 @@
+.category-section{
+ 
+    position: absolute;
+    width: 100%;
+    
+    figure{
+         padding-top: 20px;
+        padding-left: 20px;
+        width: 600px;
+        
+        border-top: 2px solid #2d2d2d;
+        &:first-child{
+            border-top: none;
+        }
+        img{
+            width: 600px;
+            height: 244px;
+        }
+
+        figcaption{
+            h3{
+                margin-top: 15px;
+                font-size: 32px;
+                color: #2c95dd;
+            }
+            span{
+                display: block;
+                font-size: 26px;
+                color: #999;
+                font-family: Helvetica Neue Light, Helvetica Neue , Helvetica , Arial, sans-serif;
+            }
+            p{
+                margin-top: 15px;
+                font-size: 28px;
+                line-height: 36px;
+                font-family: Helvetica Neue Light, Helvetica Neue , Helvetica , Arial, sans-serif;
+                letter-spacing: -1px;
+                margin-bottom: 15px;
+            }
+        }
+
+    }
+    
+    
+    .pagination{
+        font-size: 32px;
+        text-align: center;
+        padding-top: 65px;
+        a{
+            display: inline-block;
+        }
+        a:active{
+                  color: #2c95dd;
+        }
+        
+        .prev{
+            margin-right: 13px;
+            color: #666;
+        }
+        .next{
+            margin-left: 13px;
+            color: #666;
+        }
+        .pagenum{
+            padding-left: 13px;
+            padding-right: 13px;
+            outline: none;
+            &.active{
+                color: #2c95dd;
+            }
+        }
+    }
+
+}

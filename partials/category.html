@@ -1,0 +1,22 @@
+<section class="category-section" ng-controller="categoryController">
+
+    <a href="{{item.link}}" ng-repeat="item in getItems()" class="">
+        <figure>
+            <img ng-src="{{item.src}}" alt="{{item.title}}" title="{{item.title}}">
+            <figcaption>
+                <h3>{{item.title}}</h3>
+                <span>{{item.time}}</span>
+                <p>{{item.content}}</p>
+            </figcaption>
+        </figure>
+    </a>
+
+    <div class="pagination">
+        <a href="javascript:;" class="prev">Prev</a>
+        <a href="javascript:;" class="pagenum" ng-repeat="page in getPageList()" ng-class="{'active' : isactive(page)}" ng-click="selectPage(page)">
+            {{page}}
+        </a>
+        <a href="javascript:;" class="next">Next</a>
+    </div>
+
+</section>
