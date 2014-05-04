@@ -2,7 +2,7 @@
 
 .toread{
         margin-top: 2px;
-         @include clearfix;
+         overflow: hidden;
         figure{
                 position: relative;
                 float: left;

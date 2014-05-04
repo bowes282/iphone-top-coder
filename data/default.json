@@ -1,0 +1,24 @@
+{
+    "categoryA":  {
+        "title" :  "Description Lorem Ipsum",
+        "src" : "img/category1.png",
+        "content" : "Aenean nec sapien massa, eget  ligula. In non laoreet dui. Vestibulum rhoncus purus vitae justo ornare viverra.",
+        "link" : ""
+    },
+    "categoryB":  {
+        "title" :  "Technology",
+        "src" : "img/category2.png",
+        "link" : "#/Category/Technology"
+    },
+    "categoryC":  {
+        "title" :  "Design",
+        "src" : "img/category3.png",
+        "link" : "#/Category/Design"
+    },
+    "categoryD":  {
+        "title" :  "Lorem Ipsum",
+        "src" : "img/category4.png",
+        "link" : ""
+    }
+    
+}

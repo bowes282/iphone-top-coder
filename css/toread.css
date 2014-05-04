@@ -1,7 +1,6 @@
 .toread {
   margin-top: 2px;
   overflow: hidden;
-  *zoom: 1;
 }
 .toread figure {
   position: relative;

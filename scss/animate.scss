@@ -67,6 +67,7 @@
 
 //angular fadein fadeout transition (element none to element block)
 .animation-inout{
+ 
  @include trans;
   &.ng-enter {
     opacity: 0;
@@ -80,6 +81,8 @@
       opacity: 0;
     }
   }
+  
+  
 }
 
 

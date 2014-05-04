@@ -1,31 +1,31 @@
-<section class="default">
-        <a href="">
+<section class="default" ng-controller="defaultController">
+        <a href="{{defaults.categoryA.link}}">
                 <figure class="category-a">
-                        <h3>Description Lorem Ipsum</h3>
-                        <img ng-src="img/category1.png" alt="image" title="main-pic" width="600" height="420">
-                        <figcaption>Aenean nec sapien massa, eget  ligula. In non laoreet dui. Vestibulum rhoncus purus vitae justo ornare viverra. </figcaption>
+                        <h3>{{defaults.categoryA.title}}</h3>
+                        <img ng-src="{{defaults.categoryA.src}}" alt="image" title="main-pic" width="600" height="420">
+                        <figcaption>{{defaults.categoryA.content}}</figcaption>
                 </figure>  
         </a>
 
-        <a href="">
+        <a href="{{defaults.categoryB.link}}">
                 <figure class="category-b">
-                        <h3>Technology</h3>
-                        <img ng-src="img/category2.png" alt="image" title="main-pic" width="290" height="300">
+                        <h3>{{defaults.categoryB.title}}</h3>
+                        <img ng-src="{{defaults.categoryB.src}}" alt="image" title="main-pic" width="290" height="300">
                 </figure>
         </a>
 
-        <a href="">
+        <a href="{{defaults.categoryC.link}}">
                 <figure class="category-c">
-                        <h3>Design</h3>
-                        <img ng-src="img/category3.png" alt="image" title="main-pic" width="290" height="300">
+                        <h3>{{defaults.categoryC.title}}</h3>
+                        <img ng-src="{{defaults.categoryC.src}}" alt="image" title="main-pic" width="290" height="300">
                 </figure>
         </a>
 
 
-        <a href="">
+        <a href="{{defaults.categoryD.link}}">
                 <figure class="category-d">
-                        <h3>Lorem Ipsum</h3>
-                        <img ng-src="img/category4.png" alt="image" title="main-pic" width="600" height="206">
+                        <h3>{{defaults.categoryD.title}}</h3>
+                        <img ng-src="{{defaults.categoryD.src}}" alt="image" title="main-pic" width="600" height="206">
                 </figure>
         </a>
 

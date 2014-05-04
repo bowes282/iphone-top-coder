@@ -1,0 +1,60 @@
+.category-section figure {
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 600px;
+  border-top: 2px solid #2d2d2d;
+}
+.category-section figure:first-child {
+  border-top: none;
+}
+.category-section figure img {
+  width: 600px;
+  height: 244px;
+}
+.category-section figure figcaption h3 {
+  margin-top: 15px;
+  font-size: 32px;
+  color: #2c95dd;
+}
+.category-section figure figcaption span {
+  display: block;
+  font-size: 26px;
+  color: #999;
+  font-family: Helvetica Neue Light, Helvetica Neue , Helvetica , Arial, sans-serif;
+}
+.category-section figure figcaption p {
+  margin-top: 15px;
+  font-size: 28px;
+  line-height: 36px;
+  font-family: Helvetica Neue Light, Helvetica Neue , Helvetica , Arial, sans-serif;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+}
+.category-section .pagination {
+  font-size: 32px;
+  text-align: center;
+  padding-top: 65px;
+  padding-bottom: 35px;
+}
+.category-section .pagination a {
+  display: inline-block;
+}
+.category-section .pagination a:active {
+  color: #2c95dd;
+}
+.category-section .pagination .prev {
+  margin-right: 13px;
+  color: #666;
+}
+.category-section .pagination .next {
+  margin-left: 13px;
+  color: #666;
+}
+.category-section .pagination .pagenum {
+  padding-left: 13px;
+  padding-right: 13px;
+  outline: none;
+}
+.category-section .pagination .pagenum.active {
+  color: #2c95dd;
+}

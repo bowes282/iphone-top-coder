@@ -1,5 +1,6 @@
 .search-panel {
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .search-panel header {
   margin: 0 20px;
@@ -71,7 +72,8 @@
 }
 .search-panel .search-after article figure {
   margin-top: 20px;
-  overflow: auto;
+  overflow: hidden;
+  width: 100%;
 }
 .search-panel .search-after article figure img {
   display: block;
