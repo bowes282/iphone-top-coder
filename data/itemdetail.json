@@ -10,5 +10,6 @@
     "contents" : [
         "Aenean nec sapien massa, eget scelerisque ligula. In non laoreet dui. Vestibulum rhoncus purus vitae justo ornare viverra. Praesent consectetur justo a diam iaculis nec hendrerit quam ultricies. Vestibulum commodo nisi nec felis rhoncus id porttitor orci eleifend. Aenean facilisis quam ut lectus lobortis euismod. Phasellus egestas lacus et nisi egestas vel tempus metus interdum.",
         "Praesent consectetur justo a diam iaculis nec hendrerit quam ultricies. Vestibulum commodo "
-    ]
+    ],
+    "videosrc" : "http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4"
 }

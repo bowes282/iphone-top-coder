@@ -1,9 +1,10 @@
 .category-section{
- 
+        
     figure{
          padding-top: 20px;
         padding-left: 20px;
         width: 600px;
+        float: left;
         
         border-top: 2px solid #2d2d2d;
         &:first-child{
@@ -40,6 +41,7 @@
     
     
     .pagination{
+        clear: both;
         font-size: 32px;
         text-align: center;
         padding-top: 65px;
