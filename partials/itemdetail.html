@@ -1,0 +1,55 @@
+<section ng-controller="itemDetailController">
+
+    <div class="status-wrap">
+        <h4>{{itemdetail.title}}</h4>
+        <div class="info-wrap">
+            <span class="username">by <strong>{{itemdetail.user}}</strong></span>
+            <span class="date">{{itemdetail.time}}</span>
+            <span class="classify"><strong>{{itemdetail.category}}</strong></span>
+        </div>
+        <div class="component-rating">
+            <div id="star" class="star-wrap">
+                
+                <div class="star-full" ng-repeat="i in starfull track by $index"></div>
+                <div class="star-half" ng-show="starhalf"></div>
+                
+            </div>
+
+            <div class="appreciate">
+                <a><span class="num">{{itemdetail.likes}} Likes</span></a> 
+                <a class="blue"><span class="num">{{itemdetail.dislikes}}</span> Dislikes</a> 
+                <a href="#" class="blue"><span class="num">{{itemdetail.comments}}</span> Comments</a>
+            </div>
+        </div>
+
+        <div class="video">
+            <div class="video-body">
+                <h3>Video Placeholder</h3>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                </div>
+            </div>
+            <div class="video-footer">
+                <span class="play-btn"></span>
+                <span class="play-times">1:11/3:50</span>
+                <span class="enlarge-btn"></span>
+            </div>
+        </div>
+
+        <p ng-repeat="p in itemdetail.contents ">
+            {{p}}
+         </p>
+
+    </div>
+
+    <footer class="item-detail-footer">
+        <a class="bookmarks-icon"></a>
+        <a class="star-icon"></a>
+        <a class="share-icon"></a>
+        <a class="rss-icon"></a>
+    </footer>
+
+
+
+</section>

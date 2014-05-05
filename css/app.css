@@ -60,6 +60,10 @@ body {
   color: #fff;
 }
 
+strong {
+  font-weight: bold;
+}
+
 .splash {
   position: fixed;
   width: 100%;

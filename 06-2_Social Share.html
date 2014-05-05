@@ -18,8 +18,7 @@
         <script src="js/angular-route.js" type="text/javascript"></script>
         <script src="js/angular-animate.js" type="text/javascript"></script>
         <script src="js/app.js" type="text/javascript"></script>
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
-        <script src="js/jquery.raty.js" type="text/javascript"></script>
+
 
     </head>
     <body>
@@ -36,15 +35,24 @@
             <div class="status-wrap">
                 <h4>Integer ipsum sem luctus ut</h4>
                 <div class="info-wrap">
-                    <span class="username">by username07</span>
+                    <span class="username">by <strong>username07</strong></span>
                     <span class="date">9 April 2014</span>
-                    <span class="classify">Technology</span>
+                    <span class="classify"><strong>Technology</strong></span>
                 </div>
                 <div class="component-rating">
-                    <div id="star" class="star"></div>
-                    <a href="#"><span class="num">141 Likes</span></a> 
-                    <a href="#" class="blue"><span class="num">3</span> Dislikes</a> 
-                    <a href="#" class="blue"><span class="num">20</span> Comment</a>
+                    <div id="star" class="star-wrap">
+                        <div class="star-full"></div>
+                        <div class="star-full"></div>
+                        <div class="star-full"></div>
+                        <div class="star-half"></div>
+                        <div class="star-half"></div>
+                    </div>
+                    
+                    <div class="appreciate">
+                        <a><span class="num">141 Likes</span></a> 
+                        <a class="blue"><span class="num">3</span> Dislikes</a> 
+                        <a href="#" class="blue"><span class="num">20</span> Comments</a>
+                    </div>
                 </div>
 
                 <div class="video">
@@ -61,19 +69,21 @@
                         <span class="enlarge-btn"></span>
                     </div>
                 </div>
-
-                <p class="first-desc">Aenean nec sapien massa, eget scelerisque ligula. In non laoreet dui. Vestibulum rhoncus purus vitae justo ornare viverra. Praesent consectetur justo a diam iaculis nec hendrerit quam ultricies. Vestibulum commodo nisi nec felis rhoncus id porttitor orci eleifend. Aenean facilisis quam ut lectus lobortis euismod. Phasellus egestas lacus et nisi egestas vel tempus metus interdum.</p>
-                <p class="second-desc">Praesent consectetur justo a diam iaculis nec hendrerit quam ultricies. Vestibulum commodo </p>
-
+                
+                <p >
+                    Aenean nec sapien massa, eget scelerisque ligula. In non laoreet dui. Vestibulum rhoncus purus vitae justo ornare viverra. Praesent consectetur justo a diam iaculis nec hendrerit quam ultricies. Vestibulum commodo nisi nec felis rhoncus id porttitor orci eleifend. Aenean facilisis quam ut lectus lobortis euismod. Phasellus egestas lacus et nisi egestas vel tempus metus interdum.
+                </p>
+                <p >
+                    Praesent consectetur justo a diam iaculis nec hendrerit quam ultricies. Vestibulum commodo 
+                </p>
+ 
             </div>
             
-            <footer class="interests-footer">
-                    <div class="receive">
+            <footer class="item-detail-footer">
                             <a class="bookmarks-icon"></a>
                             <a class="star-icon"></a>
                             <a class="share-icon"></a>
                             <a class="rss-icon"></a>
-                    </div>
             </footer>
             
     </main>
@@ -90,16 +100,5 @@
         </div>
     </div>
 
-
-    
-    <script>
-
-       $('#star').raty({
-
-           size:25
-
-       });
-    </script>
-        
     </body>
 </html>

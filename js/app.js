@@ -44,7 +44,14 @@ app.config(function($routeProvider) {
                                 templateUrl: 'partials/category.html',
                                 direction: 'left',
                                 title: 'Design'
-                        })				
+                        })
+		.when('/Category/Technology/:itemnum',
+                        {
+                                controller: 'itemDetailController',
+                                templateUrl: 'partials/itemdetail.html',
+                                direction: 'left',
+                                title: ''
+                        })
                 .otherwise(
                         {
                                 redirectTo: '/Dashboard/Default'
@@ -73,9 +80,9 @@ app.service('dataService', function($http , $route) {
                         'cache': true
                 });
         };
-        
+
         this.doSearch = function(data){
-                //should use $http.post 
+                //should use $http.post
                 return  $http.get('data/dosearch.json',{
                         'cache': true
                 });
@@ -84,14 +91,14 @@ app.service('dataService', function($http , $route) {
 //                });
 
         };
-	
+
 	this.getDefault = function(){
 		return $http.get('data/default.json',{
                         'cache': true
                 });
 	};
-		
-		
+
+
 	this.getCategoryData = function(){
 		 var title = $route.current.title;
 		 var url;
@@ -100,12 +107,22 @@ app.service('dataService', function($http , $route) {
 		 }else if(title === 'Design'){
 			  url = 'data/design.json';
 		 }
-	
+
 		return  $http.get( url ,{
                         'cache': true
                 });
 	};
-
+	
+	this.getItemDetail = function(data){
+		//should use $http.post
+                return  $http.get('data/itemdetail.json',{
+                        'cache': true
+                });
+//                return  $http.post('data/itemdetail.json', data ,{
+//                        'cache': true
+//                });
+		
+	};
 });
 
 
@@ -114,11 +131,11 @@ app.controller('bodyController', function($scope, $route, $location) {
         $scope.slideDirection = null;
         $scope.navon = false;
 	$scope.hideafterload = false;
-	
+
 	window.setTimeout(function(){
 		$scope.hideafterload = true; //delay 100ms seconds show splash
 	},100);
-		
+
         $scope.$on("$routeChangeSuccess", function(event, newUrl, oldUrl) {
                 try {
                         //get slide direction from url mappings
@@ -136,7 +153,7 @@ app.controller('bodyController', function($scope, $route, $location) {
                         if (!oldUrl) { //disable slide if firstload
                                 $scope.slideDirection = null;
                         }
-                        
+
                         //close nav bar when animation complete
                         window.setTimeout(function() {
                                 $scope.$apply(function() {
@@ -194,14 +211,14 @@ app.controller('defaultController' , function($scope , dataService){
 	dataService.getDefault().success(function(data){
 		$scope.defaults = data;
 	});
-	
+
 });
 
 
 app.controller('toReadController', function($scope, dataService) {
         dataService.getToRead().success(function(data) {
 			$scope.toreads = data;
-				
+
         });
 
 });
@@ -216,11 +233,11 @@ app.controller('interestsController', function($scope, dataService) {
 });
 
 app.controller('searchController', function($scope, dataService) {
-        
+
         dataService.getSearch().success(function(data){
                 $scope.searchbefore = data;
         });
-        
+
         var timer;
         $scope.doSearch = function(){
                 window.clearTimeout(timer);
@@ -234,27 +251,27 @@ app.controller('searchController', function($scope, dataService) {
                                         $scope.searchafter = data;
                                         $scope.show = false;
                                 });
-                        
+
                 },400);
         };
-        
+
          $scope.show = true;
          $scope.topicLimit = 3;
          $scope.tweetLimit = 2;
          $scope.movieLimit = 3;
-         
 
- 
+
+
        $scope.noTopicLimit = function(){
                $scope.topicLimit = $scope.searchafter.topics.length;
 
        };
-       
+
       $scope.notweetLimit = function(){
                $scope.tweetLimit = $scope.searchafter.tweets.length;
        };
-       
-       
+
+
        $scope.nomovieLimit = function(){
                $scope.movieLimit = $scope.searchafter.movies.length;
        };
@@ -268,15 +285,15 @@ app.controller('categoryController', function($scope, dataService , $filter) {
 	$scope.currentPage = 1;
 	$scope.pageSize = 2;
 	$scope.pageCount = 3;
-	
+
 	$scope.getItems = function(){
 		return $filter('range')($scope.items , $scope.currentPage , $scope.pageSize);
 	};
-	 
+
 	 $scope.getPageList = function(){
 		return $filter('pageList')($scope.items , $scope.currentPage , $scope.pageSize , $scope.pageCount);
 	 };
-	 
+
 	 $scope.isactive =  function(page){
 		if($scope.currentPage === page){
 			return true;
@@ -284,30 +301,56 @@ app.controller('categoryController', function($scope, dataService , $filter) {
 			return false;
 		}
 	 };
-	 
+
 	 $scope.selectPage = function(page){
 		$scope.currentPage = page;
 	 };
-         
+
                  $scope.selectPrev = function(){
                         if($scope.currentPage === 1){
                                 return;
                         }else{
                                 $scope.currentPage -= 1;
                         }
-                        
+
                  };
-                 
+
                  $scope.selectNext = function(){
                         if($scope.currentPage === Math.ceil( $scope.items.length / $scope.pageSize)){
                                 return;
                         }else{
                                 $scope.currentPage += 1;
                         }
-                        
+
                  };
-         
-	 
+
+
+
+});
+
+
+
+app.controller('itemDetailController' ,function($scope , $routeParams , dataService){
+	
+	dataService.getItemDetail($routeParams.itemnum).success(function(data){
+		$scope.itemdetail = data;
+		$scope.rate = data.rate;
+		$scope.starfull = getStars();
+	});
+	
+	  function getStars(){
+		var starfull = Math.floor($scope.rate);
+		
+		 if($scope.rate === starfull){
+			 $scope.starhalf = false;
+			 
+		 }else{
+			 $scope.starhalf = true;
+			 
+		 } 
+		  return new Array(starfull);
+	};
+	
 
 });
 
