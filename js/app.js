@@ -45,10 +45,17 @@ app.config(function($routeProvider) {
                                 direction: 'left',
                                 title: 'Design'
                         })
-                .when('/Category/Technology/:itemnum',
+                .when('/ItemDetail/:itemnum',
                         {
                                 controller: 'itemDetailController',
                                 templateUrl: 'partials/itemdetail.html',
+                                direction: 'left',
+                                title: ''
+                        })
+		.when('/Comments/:itemnum',
+                        {
+                                controller: 'commentsController',
+                                templateUrl: 'partials/comment.html',
                                 direction: 'left',
                                 title: ''
                         })
@@ -93,9 +100,14 @@ app.service('dataService', function($http, $route) {
         };
 
         this.getDefault = function() {
+	//should use $http.post
                 return $http.get('data/default.json', {
                         'cache': true
                 });
+//                return  $http.post('data/default.json', data ,{
+//                        'cache': true
+//                });
+
         };
 
 
@@ -123,6 +135,14 @@ app.service('dataService', function($http, $route) {
 //                });
 
         };
+		
+	this.getComments = function(data){
+		 return  $http.get('data/comments.json', {
+                        'cache': true
+                });
+	};
+		
+		
 });
 
 
@@ -153,7 +173,7 @@ app.controller('bodyController', function($scope, $route, $location) {
                         if (!oldUrl) { //disable slide if firstload
                                 $scope.slideDirection = null;
                         }
-
+	
                         //close nav bar when animation complete
                         window.setTimeout(function() {
                                 $scope.$apply(function() {
@@ -350,13 +370,33 @@ app.controller('itemDetailController', function($scope, $routeParams, dataServic
 
                 }
                 return new Array(starfull);
-        }
-        ;
+        };
 
 
 });
 
+app.controller('commentsController', function($scope, dataService ,$routeParams ,$anchorScroll ,$location ,$route ){
+	
+	dataService.getComments($routeParams.itemnum).success(function(data){
+		$scope.comments = data;
+		
+	});
 
+	$scope.reply = function(){
+		 $route.current.$$route.direction = ""; //remove slide effect because of anchorscroll
+		 $location.hash('usercomments');
+		
+		if( !$scope.usercomments || $scope.usercomments === ""){ //if no comment then scroll to textarea
+			$anchorScroll();
+		}else{
+			//do some post requrest
+		}
+	};
+	
+});
+
+
+//pagination filter
 app.filter("range", function() {
         return function(data, curpage, size) {
                 if (!angular.isArray(data)) {
@@ -385,5 +425,25 @@ app.filter("pageList", function() {
                         return data;
                 }
         };
+});
+
+
+
+app.directive('share' , function(){
+	return {
+		restrict: "EAC",
+		templateUrl: "partials/share.html",
+		scope: true,
+		controller : function($scope){
+			console.log($scope);
+			$scope.socialLoginvisiable = true;
+			
+			$scope.hideSocialLogin = function(){
+				$scope.socialLoginvisiable = false;
+			};
+		
+		}
+	 };
+	
 });
 

@@ -1,0 +1,30 @@
+[
+    {
+        "commentid" : 100001,
+        "user" : "Jannet",
+        "imgsrc" : "img/userAvatar.png",
+        "time" : "20",
+        "content" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua."
+    },
+    {
+        "commentid" : 100002,
+        "user" : "Jannet",
+        "imgsrc" : "img/userAvatar.png",
+        "time" : "20",
+        "content" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua."
+    },
+    {
+        "commentid" : 100003,
+        "user" : "Jannet",
+        "imgsrc" : "img/userAvatar.png",
+        "time" : "20",
+        "content" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua."
+    },
+    {
+        "commentid" : 100004,
+        "user" : "Jannet",
+        "imgsrc" : "img/userAvatar.png",
+        "time" : "20",
+        "content" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua."
+    }
+]

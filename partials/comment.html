@@ -1,0 +1,38 @@
+<section ng-controller="commentsController">
+    
+    <div class="comments">
+        <div class="details clearfix" ng-repeat="comment in comments">
+            <div class="portrait">
+                <img ng-src="{{comment.imgsrc}}" title="{{comment.user}}" alt="{{comment.user}}">
+            </div>
+            <div class="description">
+                <p class="firstName">
+                    <span class="blue username">{{comment.user}}</span>
+                    <span class="times">{{comment.time}} minutes ago</span>
+                </p>
+                <p>{{comment.content}}</p>
+                <p class="component-rating">
+                    <a href="javascript:;" class="blue">Like</a> 
+                    <a href="javascript:;" class="blue">Dislikes</a> 
+                    <a href="javascript:;" class="blue" ng-click="reply()">Reply</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="add-comments">
+            <textarea placeholder="Write a comment..." ng-model="inputcomments" id="usercomments"></textarea>
+        </div>
+
+    </div>
+
+    <footer class="interests-footer">
+        <div class="receive">
+            <a class="bookmarks-icon"></a>
+            <a class="star-icon"></a>
+            <a class="share-icon"></a>
+            <a class="rss-icon"></a>
+        </div>
+    </footer>
+    
+    <div share></div>
+</section>
