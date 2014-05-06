@@ -1,4 +1,3 @@
-go-Mnemosyne
 ============
 http://community.topcoder.com/tc?module=ProjectDetail&pj=30042111
 
