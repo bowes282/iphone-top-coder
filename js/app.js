@@ -435,11 +435,13 @@ app.directive('share' , function(){
 		templateUrl: "partials/share.html",
 		scope: true,
 		controller : function($scope){
-			console.log($scope);
-			$scope.socialLoginvisiable = true;
+			$scope.share =  {};
+			var share = $scope.share;
 			
-			$scope.hideSocialLogin = function(){
-				$scope.socialLoginvisiable = false;
+			share.visible = true;
+			
+			share.hideSocialLogin = function(){
+				share.visible = false;
 			};
 		
 		}
