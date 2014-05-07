@@ -467,6 +467,11 @@ app.directive('share' , function(){
 			};
 			share.facebookLogin = function(){
 				$scope.sharelogin.visible = true;
+				$scope.sharelogin.name = "FaceBook";
+			};
+			share.twitterLogin = function(){
+				$scope.sharelogin.visible = true;
+				$scope.sharelogin.name = "Twitter";
 			};
 		
 		}
