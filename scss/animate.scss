@@ -53,6 +53,45 @@
 }
 
 
+.animation-scale{
+        @include trans;
+        
+        &.ng-hide-add { //animate start state , from visible to visible
+                display:block!important; //remove because of relative position
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+                opacity: 1;
+        }
+        
+        &.ng-hide-add-active{ //animate end state
+                opacity: 0;
+                -webkit-transform: scale(0.7);
+                -moz-transform: scale(0.7);
+                -ms-transform: scale(0.7);
+                transform: scale(0.7);
+        }
+        
+        &.ng-hide-remove { //animate start state ,from invisible to visible
+                display:block!important;
+                -webkit-transform: scale(0.7);
+                -moz-transform: scale(0.7);
+                -ms-transform: scale(0.7);
+                transform: scale(0.7);
+                opacity: 0;
+        }
+        
+        &.ng-hide-remove-active{ //animate end state
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+                opacity: 1;
+        }
+}
+
+
 .animation-fade-out{
          @include trans;
         &.ng-hide-add { //animate start state , from visible to visible

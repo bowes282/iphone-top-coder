@@ -157,6 +157,7 @@ app.controller('bodyController', function($scope, $route, $location) {
         }, 100);
 
         $scope.$on("$routeChangeSuccess", function(event, newUrl, oldUrl) {
+			
                 try {
                         //get slide direction from url mappings
                         switch ($route.current.direction) {
@@ -193,6 +194,16 @@ app.controller('bodyController', function($scope, $route, $location) {
                 }
         });
 
+	var locations =[];
+	 //https://docs.angularjs.org/api/ng/service/$location#events
+	$scope.$on("$locationChangeStart", function(event, newurl, oldurl) {
+		 locations.push($location.$$path);
+	});
+
+	$scope.goBack = function(){
+		 var backpath = locations.length > 1 ? locations.splice(-2)[0] : "/"; 
+		 $location.path(backpath);
+	};
 
 
         var lock = false;//prevent dblclick bugs
@@ -372,6 +383,10 @@ app.controller('itemDetailController', function($scope, $routeParams, dataServic
                 return new Array(starfull);
         };
 
+	$scope.doshare = function(){
+		$scope.share.visible = true;
+		
+	};
 
 });
 
@@ -433,12 +448,12 @@ app.directive('share' , function(){
 	return {
 		restrict: "EAC",
 		templateUrl: "partials/share.html",
-		scope: true,
+		//scope: true,
 		controller : function($scope){
 			$scope.share =  {};
 			var share = $scope.share;
 			
-			share.visible = true;
+			share.visible = false;
 			
 			share.hideSocialLogin = function(){
 				share.visible = false;

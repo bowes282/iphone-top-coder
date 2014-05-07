@@ -152,7 +152,10 @@
     z-index: 99;
     margin: auto;
     position: fixed;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 }
 .overlayer h1{background: #222;height: 84px;line-height: 84px;color: #fff;position: relative;padding-left: 20px;font-size: 36px;}
 .overlayer .content{padding: 20px;}
