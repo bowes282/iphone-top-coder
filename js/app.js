@@ -387,6 +387,8 @@ app.controller('itemDetailController', function($scope, $routeParams, dataServic
 		$scope.share.visible = true;
 		
 	};
+	
+	 
 
 });
 
@@ -406,6 +408,11 @@ app.controller('commentsController', function($scope, dataService ,$routeParams 
 		}else{
 			//do some post requrest
 		}
+	};
+	
+	$scope.doshare = function(){
+		$scope.share.visible = true;
+		
 	};
 	
 });
@@ -458,7 +465,30 @@ app.directive('share' , function(){
 			share.hideSocialLogin = function(){
 				share.visible = false;
 			};
+			share.facebookLogin = function(){
+				$scope.sharelogin.visible = true;
+			};
 		
+		}
+	 };
+	
+});
+
+
+app.directive('sharelogin' , function(){
+	return {
+		restrict: "EAC",
+		templateUrl: "partials/sharelogin.html",
+		//scope: true,
+		controller : function($scope){
+			 $scope.sharelogin =  {};
+			var sharelogin = $scope.sharelogin;
+			
+			sharelogin.visible = false;
+			sharelogin.hideSocialLogin = function(){
+				sharelogin.visible = false;
+			};
+			//you can put sharelogin username and password here
 		}
 	 };
 	

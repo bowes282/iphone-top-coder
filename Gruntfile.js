@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 module.exports = function(grunt) {
         // Project configuration.
         grunt.initConfig({
@@ -11,9 +6,11 @@ module.exports = function(grunt) {
                         add_banner: {
                                 options: {
                                   //banner: '/* My minified css file */'
+				 keepSpecialComments : 0,
+				 report :	'gzip'
                                 },
                                 files: {
-                                  'output.min.css': ['css/*.css' , '!css/bootstrap*.css']
+                                  'iphone-app.min.css': ['css/*.css' , '!css/bootstrap*.css' , '!css/font-awesome*.css']
                                 }
                         }
                 }

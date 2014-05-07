@@ -183,6 +183,7 @@
     padding: 0px 20px;
     margin-bottom: 20px;
     font-size: 28px;
+    outline: none;
 }
 .overlayer .content .ui-button-text{
     background: #2c95dd;

@@ -1,0 +1,8 @@
+{
+  "name": "Mnemosyne-iphone-app",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-cssmin": "latest"
+  }
+}

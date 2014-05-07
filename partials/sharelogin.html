@@ -1,0 +1,19 @@
+<div class="modal-bg" ng-show="sharelogin.visible" ></div>
+<div class="overlayer animation-scale" ng-show="sharelogin.visible" >
+    <h1>{{sharelogin.name}} Login Required<a class="close-btn" href="javascript:;" ng-click="sharelogin.hideSocialLogin()"></a></h1>
+    <div class="content">
+        <form class="ui-form">
+            <div class="ui-form-item">
+                <input id="username" name="username" class="ui-input" required type="email" minlength="1" maxlength="20" value="Email Address"/>
+            </div>
+
+            <div class="ui-form-item ui-form-item-error">
+                <input id="password" name="password" type="password" class="ui-input" minlength="5" value="Password" />
+            </div>
+
+            <div class="ui-form-item">
+                <input class="ui-button-text" value="Login" type="submit">
+            </div>
+        </form>
+    </div>
+</div>
