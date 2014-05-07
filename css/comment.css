@@ -176,7 +176,7 @@
 .overlayer .content .ui-input{
     width: 514px;
     height: 76px;
-    line-height: 76px;
+    line-height: 2;
     color: #aaaaaa;
     background: #fff;
     border: 2px solid #ddd;
