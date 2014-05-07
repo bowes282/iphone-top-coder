@@ -173,3 +173,23 @@
     height: 60px;
     display: block;
 }
+.overlayer .content .ui-input{
+    width: 514px;
+    height: 76px;
+    line-height: 76px;
+    color: #aaaaaa;
+    background: #fff;
+    border: 2px solid #ddd;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+.overlayer .content .ui-button-text{
+    background: #2c95dd;
+    color: #fff;
+    text-align: center;
+    width: 558px;
+    border: 0px;
+    height: 80px;
+    font-size: 28px;
+}
