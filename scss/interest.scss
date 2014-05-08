@@ -23,14 +23,14 @@
                 float: left;
 
                 &.interests-blue,&.interests-white{
-                        background-image: inline-image('interest-on.png');
+                        background-image: image-url('interest-on.png');
                 }
 
                 &.interests-blue p{
-                        background: inline-image('broadcast-blue.png') no-repeat bottom left;
+                        background: image-url('broadcast-blue.png') no-repeat bottom left;
                 }
                 &.interests-white p{
-                        background: inline-image('broadcast-white.png') no-repeat bottom left;
+                        background: image-url('broadcast-white.png') no-repeat bottom left;
                 }
 
                 p{

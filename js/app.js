@@ -7,56 +7,48 @@ app.config(function($routeProvider) {
                         {
                                 controller: 'defaultController',
                                 templateUrl: 'partials/default.html',
-                                direction: 'left',
                                 title: 'logo'
                         })
                 .when('/Dashboard/ToRead',
                         {
                                 controller: 'toReadController',
                                 templateUrl: 'partials/toRead.html',
-                                direction: 'left',
                                 title: 'To Read'
                         })
                 .when('/Dashboard/Interests',
                         {
                                 controller: 'interestsController',
                                 templateUrl: 'partials/interests.html',
-                                direction: 'left',
                                 title: 'Interests Page'
                         })
                 .when('/Dashboard/Search',
                         {
                                 controller: 'searchController',
                                 templateUrl: 'partials/search.html',
-                                direction: 'left',
                                 title: 'Search'
                         })
                 .when('/Category/Technology',
                         {
                                 controller: 'categoryController',
                                 templateUrl: 'partials/category.html',
-                                direction: 'left',
                                 title: 'Technology'
                         })
                 .when('/Category/Design',
                         {
                                 controller: 'categoryController',
                                 templateUrl: 'partials/category.html',
-                                direction: 'left',
                                 title: 'Design'
                         })
                 .when('/ItemDetail/:itemnum',
                         {
                                 controller: 'itemDetailController',
                                 templateUrl: 'partials/itemdetail.html',
-                                direction: 'left',
                                 title: ''
                         })
 		.when('/Comments/:itemnum',
                         {
                                 controller: 'commentsController',
                                 templateUrl: 'partials/comment.html',
-                                direction: 'left',
                                 title: ''
                         })
                 .otherwise(
@@ -135,14 +127,14 @@ app.service('dataService', function($http, $route) {
 //                });
 
         };
-		
+
 	this.getComments = function(data){
 		 return  $http.get('data/comments.json', {
                         'cache': true
                 });
 	};
-		
-		
+
+
 });
 
 
@@ -157,24 +149,20 @@ app.controller('bodyController', function($scope, $route, $location) {
         }, 100);
 
         $scope.$on("$routeChangeSuccess", function(event, newUrl, oldUrl) {
-			
+
                 try {
-                        //get slide direction from url mappings
-                        switch ($route.current.direction) {
-                                case 'left' :
-                                        $scope.slideDirection = 'slide-from-left';
-                                        break;
-                                case 'right':
-                                        $scope.slideDirection = 'slide-from-right';
-                                        break;
-                                default:
-                                        $scope.slideDirection = null;
-                        }
+                        //if user hit back then slide from left else slide from right
+			if(isgoBack){
+				$scope.slideDirection = 'slide-from-left';
+			}else{
+				$scope.slideDirection = 'slide-from-right';
+			}
+			isgoBack = false;
 
                         if (!oldUrl) { //disable slide if firstload
                                 $scope.slideDirection = null;
                         }
-	
+
                         //close nav bar when animation complete
                         window.setTimeout(function() {
                                 $scope.$apply(function() {
@@ -200,9 +188,11 @@ app.controller('bodyController', function($scope, $route, $location) {
 		 locations.push($location.$$path);
 	});
 
+	var isgoBack = false;
 	$scope.goBack = function(){
-		 var backpath = locations.length > 1 ? locations.splice(-2)[0] : "/"; 
+		 var backpath = locations.length > 1 ? locations.splice(-2)[0] : "/";
 		 $location.path(backpath);
+		 isgoBack = true;
 	};
 
 
@@ -385,36 +375,36 @@ app.controller('itemDetailController', function($scope, $routeParams, dataServic
 
 	$scope.doshare = function(){
 		$scope.share.visible = true;
-		
+
 	};
-	
-	 
+
+
 
 });
 
 app.controller('commentsController', function($scope, dataService ,$routeParams ,$anchorScroll ,$location ,$route ){
-	
+
 	dataService.getComments($routeParams.itemnum).success(function(data){
 		$scope.comments = data;
-		
+
 	});
 
 	$scope.reply = function(){
 		 $route.current.$$route.direction = ""; //remove slide effect because of anchorscroll
 		 $location.hash('usercomments');
-		
+
 		if( !$scope.usercomments || $scope.usercomments === ""){ //if no comment then scroll to textarea
 			$anchorScroll();
 		}else{
 			//do some post requrest
 		}
 	};
-	
+
 	$scope.doshare = function(){
 		$scope.share.visible = true;
-		
+
 	};
-	
+
 });
 
 
@@ -459,9 +449,9 @@ app.directive('share' , function(){
 		controller : function($scope){
 			$scope.share =  {};
 			var share = $scope.share;
-			
+
 			share.visible = false;
-			
+
 			share.hideSocialLogin = function(){
 				share.visible = false;
 			};
@@ -473,10 +463,10 @@ app.directive('share' , function(){
 				$scope.sharelogin.visible = true;
 				$scope.sharelogin.name = "Twitter";
 			};
-		
+
 		}
 	 };
-	
+
 });
 
 
@@ -488,7 +478,7 @@ app.directive('sharelogin' , function(){
 		controller : function($scope){
 			 $scope.sharelogin =  {};
 			var sharelogin = $scope.sharelogin;
-			
+
 			sharelogin.visible = false;
 			sharelogin.hideSocialLogin = function(){
 				sharelogin.visible = false;
@@ -496,6 +486,6 @@ app.directive('sharelogin' , function(){
 			//you can put sharelogin username and password here
 		}
 	 };
-	
+
 });
 

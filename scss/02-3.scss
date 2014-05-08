@@ -64,51 +64,51 @@
         }
         
         .nav-list-search{
-            background: inline-image('nav-list-search.png')  no-repeat center left;
+            background: image-url('nav-list-search.png')  no-repeat center left;
             &:active, &:hover{
-            background: inline-image('nav-list-search-active.png')  no-repeat center left;
+            background: image-url('nav-list-search-active.png')  no-repeat center left;
             }
         }
         .nav-list-home{
-            background: inline-image('nav-list-home.png')  no-repeat center left;
+            background: image-url('nav-list-home.png')  no-repeat center left;
             &:active, &:hover{
-            background: inline-image('nav-list-home-active.png')  no-repeat center left;
+            background: image-url('nav-list-home-active.png')  no-repeat center left;
             }
         }
         .nav-list-read{
-            background: inline-image('nav-list-read.png')  no-repeat center left;
+            background: image-url('nav-list-read.png')  no-repeat center left;
             &:active, &:hover{
-            background: inline-image('nav-list-read-active.png')  no-repeat center left;
+            background: image-url('nav-list-read-active.png')  no-repeat center left;
             }
         }
         .nav-list-interest{
-             background: inline-image('nav-list-interest.png')  no-repeat center left;
+             background: image-url('nav-list-interest.png')  no-repeat center left;
             &:active, &:hover{
-            background: inline-image('nav-list-interest-active.png')  no-repeat center left;
+            background: image-url('nav-list-interest-active.png')  no-repeat center left;
             }
         }
          .nav-list-favorite{
-             background: inline-image('nav-list-favorite.png')  no-repeat center left;
+             background: image-url('nav-list-favorite.png')  no-repeat center left;
             &:active, &:hover{
-            background: inline-image('nav-list-favorite-active.png')  no-repeat center left;
+            background: image-url('nav-list-favorite-active.png')  no-repeat center left;
             }
         }
         .nav-list-feed{
-             background: inline-image('nav-list-feed.png')  no-repeat center left;
+             background: image-url('nav-list-feed.png')  no-repeat center left;
             &:active, &:hover{
-            background: inline-image('nav-list-feed-active.png')  no-repeat center left;
+            background: image-url('nav-list-feed-active.png')  no-repeat center left;
             }
         }
         .nav-list-settings{
-             background: inline-image('nav-list-settings.png')  no-repeat center left;
+             background: image-url('nav-list-settings.png')  no-repeat center left;
             &:active, &:hover{
-            background: inline-image('nav-list-settings-active.png')  no-repeat center left;
+            background: image-url('nav-list-settings-active.png')  no-repeat center left;
             }
         }
         .nav-list-logout{
-            background: inline-image('nav-list-logout.png')  no-repeat center left;
+            background: image-url('nav-list-logout.png')  no-repeat center left;
             &:active, &:hover{
-            background: inline-image('nav-list-logout-active.png')  no-repeat center left;
+            background: image-url('nav-list-logout-active.png')  no-repeat center left;
             }
         }
 

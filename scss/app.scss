@@ -17,7 +17,7 @@ strong{
     width: 100%;
     height: 100%;
     z-index: 100;
-    background-image: inline-image('splash.png');
+    background-image: image-url('splash.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #222;
@@ -37,7 +37,7 @@ a{
         //font-family: Helvetica Neue Light, Helvetica Neue , Helvetica , Arial, sans-serif;
         font-family: Helvetica Neue Medium, Helvetica Neue , Helvetica , Arial, sans-serif;
         .go-back{
-                background: inline-image("go-back.png") no-repeat center center;
+                background: image-url("go-back.png") no-repeat center center;
                 width: 90px;
                 float: left;
                 outline: none;
@@ -46,17 +46,17 @@ a{
                 }
         }
         .search{
-                background: inline-image("search.png") no-repeat center center;
+                background: image-url("search.png") no-repeat center center;
                 width: 80px;
                 float: right;
         }
         .menu{
-                background: inline-image("menu.png") no-repeat left center;
+                background: image-url("menu.png") no-repeat left center;
                 width: 85px;
                 float: right;
 
                 &:active{
-                        background: inline-image("menu-active.png") no-repeat left center;
+                        background: image-url("menu-active.png") no-repeat left center;
                 }
         }
         a{
@@ -76,7 +76,7 @@ a{
                 line-height: 88px;
 
                 &.logo{
-                        background: inline-image("logo.png") no-repeat center center;
+                        background: image-url("logo.png") no-repeat center center;
                         text-indent: -9999px;
                 }
         }
