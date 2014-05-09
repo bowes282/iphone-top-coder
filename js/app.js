@@ -156,7 +156,8 @@ app.controller('bodyController', function($scope, $route, $location) {
 				$scope.slideDirection = 'slide-from-left';
 			}else{
 				$scope.slideDirection = 'slide-from-right';
-			}
+                                                                        
+                                                        }
 			isgoBack = false;
 
                         if (!oldUrl) { //disable slide if firstload
@@ -164,11 +165,12 @@ app.controller('bodyController', function($scope, $route, $location) {
                         }
 
                         //close nav bar when animation complete
+                       // $scope.offNav();
                         window.setTimeout(function() {
                                 $scope.$apply(function() {
                                         $scope.offNav();
                                 });
-                        }, 400);
+                        });
 
                         //if islogo display logo ,else display title
                         $scope.title = $route.current.title;
@@ -182,17 +184,18 @@ app.controller('bodyController', function($scope, $route, $location) {
                 }
         });
 
-	var locations =[];
-	 //https://docs.angularjs.org/api/ng/service/$location#events
-	$scope.$on("$locationChangeStart", function(event, newurl, oldurl) {
-		 locations.push($location.$$path);
-	});
+//	var locations =[];
+//	 //https://docs.angularjs.org/api/ng/service/$location#events
+//	$scope.$on("$locationChangeStart", function(event, newurl, oldurl) {
+//		 locations.push($location.$$path);
+//	});
 
 	var isgoBack = false;
 	$scope.goBack = function(){
-		 var backpath = locations.length > 1 ? locations.splice(-2)[0] : "/";
-		 $location.path(backpath);
+		 //var backpath = locations.length > 1 ? locations.splice(-2)[0] : "/";
+		 //$location.path(backpath);
 		 isgoBack = true;
+                                     window.history.back();
 	};
 
 

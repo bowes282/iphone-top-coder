@@ -133,16 +133,13 @@ a {
 }
 
 main {
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   position: relative;
+  overflow: visible;
 }
 main.navon {
   -webkit-transform: translateX(-430px);
   -transform: translateX(-430px);
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
 }
 
 .black {
