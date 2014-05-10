@@ -139,14 +139,14 @@ app.service('dataService', function($http, $route) {
 
 
 
-app.controller('bodyController', function($scope, $route, $location , $rootScope) {
+app.controller('bodyController', function($scope, $route, $location,$rootScope ,$timeout) {
         $scope.slideDirection = null;
         $scope.navon = false;
         $rootScope.hideafterload = false;
 
-//        window.setTimeout(function() {
-//                $scope.hideafterload = true; //delay 100ms seconds show splash
-//        }, 100);
+         $timeout(function(){
+                  $rootScope.hideafterload = true;  //delay 100ms seconds show splash
+         },400);
 
         $scope.$on("$routeChangeSuccess", function(event, newUrl, oldUrl) {
 
@@ -184,16 +184,8 @@ app.controller('bodyController', function($scope, $route, $location , $rootScope
                 }
         });
 
-//	var locations =[];
-//	 //https://docs.angularjs.org/api/ng/service/$location#events
-//	$scope.$on("$locationChangeStart", function(event, newurl, oldurl) {
-//		 locations.push($location.$$path);
-//	});
-
 	var isgoBack = false;
 	$scope.goBack = function(){
-		 //var backpath = locations.length > 1 ? locations.splice(-2)[0] : "/";
-		 //$location.path(backpath);
 		 isgoBack = true;
                                      window.history.back();
 	};
@@ -233,10 +225,6 @@ app.controller('bodyController', function($scope, $route, $location , $rootScope
 
 app.controller('defaultController', function($scope, dataService ,$rootScope , $timeout) {
         
-         $timeout(function(){
-                  $rootScope.hideafterload = true;  //delay 100ms seconds show splash
-         },400);
-         
         dataService.getDefault().success(function(data) {
                 $scope.defaults = data;
         });
