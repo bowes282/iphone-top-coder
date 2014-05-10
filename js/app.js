@@ -139,27 +139,27 @@ app.service('dataService', function($http, $route) {
 
 
 
-app.controller('bodyController', function($scope, $route, $location) {
+app.controller('bodyController', function($scope, $route, $location , $rootScope) {
         $scope.slideDirection = null;
         $scope.navon = false;
-        $scope.hideafterload = false;
+        $rootScope.hideafterload = false;
 
-        window.setTimeout(function() {
-                $scope.hideafterload = true; //delay 100ms seconds show splash
-        }, 100);
+//        window.setTimeout(function() {
+//                $scope.hideafterload = true; //delay 100ms seconds show splash
+//        }, 100);
 
         $scope.$on("$routeChangeSuccess", function(event, newUrl, oldUrl) {
 
                 try {
                         //if user hit back then slide from left else slide from right
-			if(isgoBack){
-				$scope.slideDirection = 'slide-from-left';
-			}else{
-				$scope.slideDirection = 'slide-from-right';
-                                                                        
-                                                        }
-			isgoBack = false;
+                        if (isgoBack) {
+                                $scope.slideDirection = 'slide-from-left';
+                        } else {
+                                $scope.slideDirection = 'slide-from-right';
 
+                        }
+                        isgoBack = false;     
+                                        
                         if (!oldUrl) { //disable slide if firstload
                                 $scope.slideDirection = null;
                         }
@@ -231,7 +231,12 @@ app.controller('bodyController', function($scope, $route, $location) {
 
 });
 
-app.controller('defaultController', function($scope, dataService) {
+app.controller('defaultController', function($scope, dataService ,$rootScope , $timeout) {
+        
+         $timeout(function(){
+                  $rootScope.hideafterload = true;  //delay 100ms seconds show splash
+         },400);
+         
         dataService.getDefault().success(function(data) {
                 $scope.defaults = data;
         });
